@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta name="description" content="Xianyu 咸鱼酒馆 is a live music bar at Union Tower, Taman Desa, Kuala Lumpur. Live around 9:30pm, open daily 6:30pm–2:30am. WhatsApp for reservations.">
+  <meta property="og:title" content="Xianyu 咸鱼酒馆 · Taman Desa live music bar">
+  <meta property="og:description" content="Live music around 9:30pm at Union Tower, Taman Desa. Daily 6:30pm–2:30am. 18+ venue.">
+  <meta property="og:type" content="website">
+  <title>Xianyu 咸鱼酒馆 · Taman Desa Live Music Bar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Sans+SC:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0b0a;
+      --bg-elev: #151311;
+      --cream: #f4eee4;
+      --cream-soft: #e8dfd1;
+      --muted: #a89f91;
+      --line: rgba(244,238,228,.14);
+      --orange: #FF5A1F;
+      --orange-deep: #c93d0f;
+      --max: 640px;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: "Instrument Sans", "Noto Sans SC", system-ui, sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "ss01" on;
+    }
+    a { color: inherit; }
+    .ambient {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 100% -10%, rgba(255,90,31,.18), transparent 55%),
+        radial-gradient(ellipse 60% 40% at -10% 40%, rgba(255,90,31,.06), transparent 50%),
+        linear-gradient(180deg, #0c0b0a 0%, #100e0c 100%);
+    }
+    .grain {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .wrap {
+      position: relative; z-index: 1;
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      padding: 20px 20px 110px;
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 6px 0 18px;
+      animation: in .6s ease both;
+    }
+    .nav-brand {
+      font-family: Syne, sans-serif;
+      font-weight: 700; font-size: .7rem;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-brand b { color: var(--orange); font-weight: 700; }
+    .nav-live {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600;
+    }
+    .nav-live::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--orange);
+      animation: blink 1.6s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .35; }
+    }
+    @keyframes in {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+    .hero { padding: 8px 0 40px; text-align: center; }
+    .logo-stage {
+      background: var(--cream);
+      border-radius: 6px;
+      padding: clamp(28px, 8vw, 48px) clamp(22px, 6vw, 40px);
+      margin: 0 auto 32px;
+      box-shadow:
+        0 0 0 1px rgba(255,90,31,.15),
+        0 24px 60px rgba(0,0,0,.55),
+        0 0 80px rgba(255,90,31,.08);
+      animation: in .7s .05s ease both;
+    }
+    .logo-stage img {
+      display: block; width: 100%; height: auto;
+      max-width: 380px; margin: 0 auto;
+    }
+    .place {
+      font-family: Syne, sans-serif;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+      animation: in .6s .12s ease both;
+    }
+    h1 {
+      font-family: Syne, "Noto Sans SC", sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.85rem, 7.5vw, 2.75rem);
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      max-width: 14ch;
+      margin: 0 auto 14px;
+      animation: in .6s .18s ease both;
+    }
+    .zh-line {
+      font-family: "Noto Sans SC", "Instrument Sans", sans-serif;
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 28px;
+      animation: in .6s .24s ease both;
+    }
+    .cta-stack {
+      display: grid; gap: 10px;
+      animation: in .6s .3s ease both;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 54px; padding: 14px 20px;
+      font-family: Syne, "Instrument Sans", sans-serif;
+      font-weight: 700; font-size: .95rem;
+      text-decoration: none; letter-spacing: .01em;
+      border-radius: 3px;
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .btn:active { transform: scale(.985); }
+    .btn-primary {
+      background: var(--orange);
+      color: #120700;
+      box-shadow: 0 12px 32px rgba(255,90,31,.35);
+    }
+    .btn-primary:hover { filter: brightness(1.05); }
+    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn-ghost {
+      min-height: 48px;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--cream);
+      font-size: .85rem;
+    }
+    .hint {
+      margin-top: 12px;
+      font-size: .76rem;
+      color: rgba(168,159,145,.8);
+      animation: in .6s .36s ease both;
+    }
+    .policy-band {
+      margin: 36px 0 8px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      font-size: .9rem;
+      color: var(--muted);
+      animation: in .6s .4s ease both;
+    }
+    .policy-band strong { color: var(--cream); font-weight: 650; }
+    .policy-band [lang="zh"] { display: block; margin-top: 6px; font-size: .86rem; }
+
+    /* Editorial facts — not cards */
+    .pulse {
+      display: flex; flex-wrap: wrap;
+      gap: 8px 0;
+      justify-content: space-between;
+      padding: 22px 0 6px;
+      font-size: .82rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+    }
+    .pulse b {
+      color: var(--cream);
+      font-family: Syne, sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    .pulse span { white-space: nowrap; padding-right: 12px; }
+
+    .block { padding: 40px 0 8px; }
+    .block-label {
+      font-family: Syne, sans-serif;
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+    .block h2 {
+      font-family: Syne, "Noto Sans SC", sans-serif;
+      font-size: 1.45rem; font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 6px;
+    }
+    .block h2 em {
+      font-style: normal;
+      color: var(--muted);
+      font-family: "Noto Sans SC", sans-serif;
+      font-weight: 500;
+      font-size: .85rem;
+      letter-spacing: 0;
+      margin-left: 8px;
+    }
+    .rule { list-style: none; padding: 8px 0 0; }
+    .rule li {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .rule li:last-child { border-bottom: 0; }
+    .rule dt, .rule .k {
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 500;
+    }
+    .rule .v {
+      font-weight: 600;
+      font-size: .95rem;
+      line-height: 1.45;
+    }
+    .contact-list { padding-top: 8px; }
+    .contact-list a {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: .95rem;
+    }
+    .contact-list a:last-child { border-bottom: 0; }
+    .contact-list a span {
+      color: var(--orange);
+      font-family: Syne, sans-serif;
+      font-size: .85rem;
+    }
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 4px 0 14px;
+      margin-bottom: 4px;
+    }
+    .faq summary {
+      list-style: none; cursor: pointer;
+      font-family: Syne, "Noto Sans SC", sans-serif;
+      font-weight: 700; font-size: 1.02rem;
+      padding: 10px 0;
+      display: flex; justify-content: space-between; gap: 16px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--orange); font-weight: 700; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq p { color: var(--muted); font-size: .93rem; padding-bottom: 4px; }
+    .faq p [lang="zh"] { display: block; margin-top: 6px; }
+    footer {
+      margin-top: 36px; padding-top: 24px;
+      text-align: center;
+      font-size: .75rem; letter-spacing: .06em;
+      color: rgba(168,159,145,.7);
+    }
+    .sticky {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(12,11,10,.94);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .sticky .btn { width: min(var(--max), 100%); margin: 0 auto; display: flex; }
+
+    /* Menu tiles — editorial, not cards */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .menu-tile {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      border-radius: 3px;
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      transition: border-color .2s ease, transform .15s ease;
+    }
+    .menu-tile:active { transform: scale(.985); }
+    .menu-tile:hover { border-color: rgba(255,90,31,.45); }
+    .menu-tile .thumb {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top center;
+      background: #1a1714;
+    }
+    .menu-tile .meta {
+      padding: 12px 12px 14px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .menu-tile .meta strong {
+      font-family: Syne, "Noto Sans SC", sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: -.01em;
+    }
+    .menu-tile .meta strong [lang="zh"] {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: .78rem;
+      margin-left: 6px;
+      font-family: "Noto Sans SC", sans-serif;
+    }
+    .menu-tile .meta .open {
+      font-family: Syne, sans-serif;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      white-space: nowrap;
+    }
+    .menu-note {
+      margin-top: 12px;
+      font-size: .76rem;
+      color: rgba(168,159,145,.85);
+    }
+
+    @media (min-width: 700px) {
+      .wrap { padding: 28px 28px 48px; }
+      .sticky { display: none; }
+      .hero { padding-top: 20px; }
+      .rule li { grid-template-columns: 9rem 1fr; }
+    }
+    @media (max-width: 380px) {
+      .rule li { grid-template-columns: 1fr; gap: 4px; }
+      .pulse { flex-direction: column; gap: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BarOrPub",
+    "name":"Xianyu 咸鱼酒馆",
+    "description":"Laid-back live music bar at Union Tower, Taman Desa, Kuala Lumpur.",
+    "telephone":"+60126522885",
+    "sameAs":["https://instagram.com/xianyu.kl"],
+    "address":{"@type":"PostalAddress","streetAddress":"Unit A-G-03, Union Tower, Jalan Desa Bakti, Taman Desa","addressLocality":"Kuala Lumpur","addressCountry":"MY"},
+    "openingHours":"Mo-Su 18:30-02:30"
+  }
+  </script>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="nav" aria-label="Brand">
+      <div class="nav-brand">Xianyu <b>·</b> 咸鱼酒馆</div>
+      <div class="nav-live">Live ~9:30pm</div>
+    </nav>
+
+    <header class="hero">
+      <div class="logo-stage">
+        <img src="assets/logo.png" width="1563" height="1563" alt="咸鱼 Xianyu — calligraphy with orange xián yu fish mark">
+      </div>
+      <p class="place">Taman Desa · Union Tower</p>
+      <h1>Late-night live bar. Drinks that last.</h1>
+      <p class="zh-line" lang="zh">现场音乐、酒水和朋友局。</p>
+
+      <div class="cta-stack">
+        <a class="btn btn-primary" href="https://wa.me/60126522885?text=Hi%20Xianyu%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
+        <div class="btn-row">
+          <a class="btn btn-ghost" href="https://maps.app.goo.gl/R8NTbLVmtterrdzh8" target="_blank" rel="noopener">Google Maps</a>
+          <a class="btn btn-ghost" href="https://instagram.com/xianyu.kl" target="_blank" rel="noopener">@xianyu.kl</a>
+        </div>
+      </div>
+      <p class="hint">Include date, time &amp; pax. Confirmations in English.</p>
+    </header>
+
+    <div class="pulse" aria-label="Tonight’s essentials">
+      <span><b>6:30pm–2:30am</b> daily</span>
+      <span><b>~9:30pm</b> live</span>
+      <span><b>+60 12-652 2885</b></span>
+    </div>
+
+    <div class="policy-band">
+      <strong>18+ venue · No kids.</strong> No cigarette smoking; e-cigarettes and vapes are OK.
+      <span lang="zh">本店 18+，不接待小孩。不可抽烟，电子烟 / vape 可以。</span>
+    </div>
+
+    <main>
+
+      <section class="block" id="menu" aria-labelledby="menu-h">
+        <p class="block-label">01 — Menu</p>
+        <h2 id="menu-h">Food &amp; drinks<em>菜单</em></h2>
+        <div class="menu-grid">
+          <a class="menu-tile" href="assets/menu/food.pdf" target="_blank" rel="noopener">
+            <img class="thumb" src="assets/menu/food-preview-1.png" alt="Xianyu food menu preview" width="600" height="800" loading="lazy">
+            <div class="meta">
+              <strong>Food <span lang="zh">餐单</span></strong>
+              <span class="open">Open PDF</span>
+            </div>
+          </a>
+          <a class="menu-tile" href="assets/menu/drinks.pdf" target="_blank" rel="noopener">
+            <img class="thumb" src="assets/menu/drinks-preview-1.png" alt="Xianyu drinks menu preview" width="600" height="800" loading="lazy">
+            <div class="meta">
+              <strong>Drinks <span lang="zh">酒单</span></strong>
+              <span class="open">Open PDF</span>
+            </div>
+          </a>
+        </div>
+        <p class="menu-note">Tap a tile to open the full PDF menu.</p>
+      </section>
+
+      <section class="block" id="visit" aria-labelledby="visit-h">
+        <p class="block-label">02 — Visit</p>
+        <h2 id="visit-h">Plan your night<em>来之前先看</em></h2>
+        <ul class="rule">
+          <li><span class="k">Address</span><span class="v">Unit A-G-03, Union Tower<br>Jalan Desa Bakti, Taman Desa, KL</span></li>
+          <li><span class="k">Waze / Grab</span><span class="v">Search “Xian Yu KL”</span></li>
+          <li><span class="k">Happy Hour</span><span class="v">Sun–Thu before 8:30pm<br>桶装买一送一；Fri/Sat/PH eve excluded</span></li>
+          <li><span class="k">Seats</span><span class="v">About 240 · 约 240 位</span></li>
+        </ul>
+      </section>
+
+      <section class="block" id="book" aria-labelledby="book-h">
+        <p class="block-label">03 — Book</p>
+        <h2 id="book-h">Booking notes<em>订位说明</em></h2>
+        <ul class="rule">
+          <li><span class="k">Walk-in</span><span class="v">Welcome; booking is better on busy nights</span></li>
+          <li><span class="k">Sofa min</span><span class="v">Fri/Sat/PH eves only<br>RM500 sofa · max 7<br>RM1,000 big sofa · max 12</span></li>
+          <li><span class="k">Other days</span><span class="v">No sofa minimum on weekdays or PH day</span></li>
+        </ul>
+      </section>
+
+      <section class="block" id="contact" aria-labelledby="contact-h">
+        <p class="block-label">04 — Contact</p>
+        <h2 id="contact-h">Find us<em>联系 / 导航</em></h2>
+        <div class="contact-list">
+          <a href="tel:+60126522885">Call +60 12-652 2885 <span>Call</span></a>
+          <a href="https://wa.me/60126522885" target="_blank" rel="noopener">WhatsApp +60 12-652 2885 <span>Chat</span></a>
+          <a href="https://maps.app.goo.gl/R8NTbLVmtterrdzh8" target="_blank" rel="noopener">Google Maps pin <span>Maps</span></a>
+          <a href="https://waze.com/ul?q=Xian%20Yu%20KL" target="_blank" rel="noopener">Waze: Xian Yu KL <span>Waze</span></a>
+          <a href="https://instagram.com/xianyu.kl" target="_blank" rel="noopener">Instagram @xianyu.kl <span>IG</span></a>
+        </div>
+      </section>
+
+      <section class="block" id="faq" aria-labelledby="faq-h">
+        <p class="block-label">05 — FAQ</p>
+        <h2 id="faq-h">Quick answers<em>常见问题</em></h2>
+        <div class="faq">
+          <details open>
+            <summary>Can I bring kids?</summary>
+            <p>No. Xianyu is an 18+ venue with no kids.<span lang="zh"><strong>可以带小孩吗？</strong> 不可以，本店 18+。</span></p>
+          </details>
+          <details>
+            <summary>Can I vape?</summary>
+            <p>E-cigarettes and vapes are OK; cigarette smoking is not allowed.<span lang="zh"><strong>可以电子烟吗？</strong> 可以电子烟 / vape，场内不可抽烟。</span></p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer>Xianyu 咸鱼酒馆 · Taman Desa, Kuala Lumpur</footer>
+  </div>
+  <div class="sticky">
+    <a class="btn btn-primary" href="https://wa.me/60126522885?text=Hi%20Xianyu%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
+  </div>
+</body>
+</html>

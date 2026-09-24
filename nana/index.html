@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071412">
+  <meta name="description" content="nana 研酒所 is a Japanese social live bar at 2 Jalan SS 13/3A, Subang Jaya. Live around 9pm, open daily 5pm–2am. WhatsApp for reservations.">
+  <meta property="og:title" content="nana 研酒所 · SS13 Japanese social live bar">
+  <meta property="og:description" content="Date nights, conversation and live music around 9pm at 2 Jalan SS 13/3A, SS13 Subang Jaya. Daily 5pm–2am.">
+  <meta property="og:type" content="website">
+  <title>nana 研酒所 · SS13 Japanese Social Live Bar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #071412;
+      --ink-2: #0d1f1c;
+      --teal: #48B8A8;
+      --teal-bright: #5fd4c2;
+      --teal-deep: #1a4a44;
+      --cream: #f3efe6;
+      --cream-soft: #d9d2c4;
+      --muted: #9aafa8;
+      --line: rgba(243,239,230,.12);
+      --max: 640px;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: "DM Sans", "Noto Sans SC", system-ui, sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .sky {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 45% at 50% -5%, rgba(72,184,168,.22), transparent 58%),
+        radial-gradient(ellipse 50% 35% at 90% 60%, rgba(72,184,168,.08), transparent 50%),
+        linear-gradient(165deg, #071412 0%, #0a1a17 55%, #071412 100%);
+    }
+    .dots {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .035;
+      background-image: radial-gradient(circle, #f3efe6 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+    .wrap {
+      position: relative; z-index: 1;
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      padding: 20px 20px 110px;
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 6px 0 18px;
+      animation: up .6s ease both;
+    }
+    .nav-brand {
+      font-family: Outfit, sans-serif;
+      font-weight: 700; font-size: .78rem;
+      letter-spacing: .04em;
+    }
+    .nav-brand span { color: var(--teal); }
+    .nav-chip {
+      font-size: .68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--teal);
+      border: 1px solid rgba(72,184,168,.35);
+      border-radius: 999px;
+      padding: 5px 11px;
+      background: rgba(72,184,168,.08);
+    }
+    @keyframes up {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes floaty {
+      from { transform: translateY(0); }
+      to { transform: translateY(-6px); }
+    }
+    .hero { padding: 4px 0 36px; text-align: center; }
+    .logo-orb {
+      width: min(72vw, 300px);
+      margin: 0 auto 28px;
+      position: relative;
+      animation: up .75s .05s ease both, floaty 5s 1s ease-in-out infinite alternate;
+    }
+    .logo-orb::before {
+      content: "";
+      position: absolute;
+      inset: 8% 6% 2% 10%;
+      background: radial-gradient(circle, rgba(72,184,168,.45), transparent 70%);
+      filter: blur(28px);
+      z-index: -1;
+    }
+    .logo-orb img {
+      display: block; width: 100%; height: auto;
+      filter: drop-shadow(0 20px 36px rgba(0,0,0,.45));
+    }
+    .kicker {
+      font-family: Outfit, sans-serif;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+      animation: up .6s .12s ease both;
+    }
+    h1 {
+      font-family: Outfit, "Noto Sans SC", sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.9rem, 7.8vw, 2.85rem);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      max-width: 13ch;
+      margin: 0 auto 14px;
+      animation: up .6s .18s ease both;
+    }
+    h1 .soft { color: var(--teal-bright); }
+    .zh-line {
+      font-family: "Noto Sans SC", "DM Sans", sans-serif;
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 28px;
+      animation: up .6s .24s ease both;
+    }
+    .cta-stack { display: grid; gap: 10px; animation: up .6s .3s ease both; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 54px; padding: 14px 20px;
+      font-family: Outfit, "DM Sans", sans-serif;
+      font-weight: 700; font-size: .95rem;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .btn:active { transform: scale(.985); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal-bright), var(--teal));
+      color: #04201c;
+      box-shadow: 0 12px 32px rgba(72,184,168,.32);
+    }
+    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn-ghost {
+      min-height: 48px;
+      background: rgba(243,239,230,.04);
+      border: 1px solid var(--line);
+      color: var(--cream);
+      font-size: .85rem;
+      border-radius: 999px;
+    }
+    .hint {
+      margin-top: 12px;
+      font-size: .76rem;
+      color: rgba(154,175,168,.8);
+      animation: up .6s .36s ease both;
+    }
+
+    .ribbon {
+      display: flex; flex-wrap: wrap; gap: 10px 18px;
+      justify-content: center;
+      padding: 18px 12px;
+      margin: 8px 0 0;
+      border-radius: 20px;
+      background: rgba(13,31,28,.85);
+      border: 1px solid rgba(72,184,168,.18);
+      font-size: .82rem;
+      color: var(--muted);
+    }
+    .ribbon b {
+      color: var(--cream);
+      font-family: Outfit, sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .policy-band {
+      margin: 28px 0 4px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .policy-band strong { color: var(--cream); font-weight: 650; }
+    .policy-band [lang="zh"] { display: block; margin-top: 6px; font-size: .86rem; }
+
+    .block { padding: 40px 0 8px; }
+    .block-label {
+      font-family: Outfit, sans-serif;
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+    .block h2 {
+      font-family: Outfit, "Noto Sans SC", sans-serif;
+      font-size: 1.45rem; font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 6px;
+    }
+    .block h2 em {
+      font-style: normal;
+      color: var(--muted);
+      font-family: "Noto Sans SC", sans-serif;
+      font-weight: 500;
+      font-size: .85rem;
+      margin-left: 8px;
+    }
+    .rule { list-style: none; padding: 8px 0 0; }
+    .rule li {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .rule li:last-child { border-bottom: 0; }
+    .rule .k { color: var(--muted); font-size: .84rem; font-weight: 500; }
+    .rule .v { font-weight: 600; font-size: .95rem; line-height: 1.45; }
+
+    .contact-list { padding-top: 8px; }
+    .contact-list a {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: .95rem;
+    }
+    .contact-list a:last-child { border-bottom: 0; }
+    .contact-list a span {
+      color: var(--teal);
+      font-family: Outfit, sans-serif;
+      font-size: .85rem;
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 4px 0 14px;
+      margin-bottom: 4px;
+    }
+    .faq summary {
+      list-style: none; cursor: pointer;
+      font-family: Outfit, "Noto Sans SC", sans-serif;
+      font-weight: 700; font-size: 1.02rem;
+      padding: 10px 0;
+      display: flex; justify-content: space-between; gap: 16px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--teal); font-weight: 700; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq p { color: var(--muted); font-size: .93rem; }
+    .faq p [lang="zh"] { display: block; margin-top: 6px; }
+
+    footer {
+      margin-top: 36px; padding-top: 24px;
+      text-align: center;
+      font-size: .75rem; letter-spacing: .04em;
+      color: rgba(154,175,168,.7);
+    }
+    .sticky {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(7,20,18,.94);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .sticky .btn { width: min(var(--max), 100%); margin: 0 auto; display: flex; }
+
+    /* Menu tiles — soft editorial */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .menu-tile {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      background: rgba(13,31,28,.85);
+      border: 1px solid rgba(72,184,168,.18);
+      transition: border-color .2s ease, transform .15s ease, box-shadow .2s ease;
+    }
+    .menu-tile:active { transform: scale(.985); }
+    .menu-tile:hover {
+      border-color: rgba(72,184,168,.5);
+      box-shadow: 0 12px 28px rgba(72,184,168,.12);
+    }
+    .menu-tile .thumb {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top center;
+      background: #0a1a17;
+    }
+    .menu-tile .meta {
+      padding: 12px 14px 14px;
+      border-top: 1px solid rgba(72,184,168,.12);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .menu-tile .meta strong {
+      font-family: Outfit, "Noto Sans SC", sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: -.01em;
+    }
+    .menu-tile .meta strong [lang="zh"] {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: .78rem;
+      margin-left: 6px;
+      font-family: "Noto Sans SC", sans-serif;
+    }
+    .menu-tile .meta .open {
+      font-family: Outfit, sans-serif;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+    .menu-strip-wrap { margin-top: 14px; }
+    .menu-strip-label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .menu-strip {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .menu-strip a {
+      flex: 0 0 auto;
+      width: 118px;
+      scroll-snap-align: start;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(72,184,168,.18);
+      text-decoration: none;
+    }
+    .menu-strip img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .menu-note {
+      margin-top: 12px;
+      font-size: .76rem;
+      color: rgba(154,175,168,.85);
+    }
+
+    @media (min-width: 700px) {
+      .wrap { padding: 28px 28px 48px; }
+      .sticky { display: none; }
+      .hero { padding-top: 16px; }
+      .rule li { grid-template-columns: 9rem 1fr; }
+      .logo-orb { animation: up .75s .05s ease both; }
+    }
+    @media (max-width: 380px) {
+      .rule li { grid-template-columns: 1fr; gap: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BarOrPub",
+    "name":"nana 研酒所",
+    "description":"Japanese social live bar in SS13, Subang Jaya.",
+    "telephone":"+60128974221",
+    "sameAs":["https://instagram.com/nana.ss13"],
+    "address":{"@type":"PostalAddress","streetAddress":"2 Jalan SS 13/3A","addressLocality":"Subang Jaya","addressRegion":"Selangor","addressCountry":"MY"},
+    "openingHours":"Mo-Su 17:00-02:00"
+  }
+  </script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="dots" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="nav" aria-label="Brand">
+      <div class="nav-brand">nana <span>研酒所</span></div>
+      <div class="nav-chip">SS13 · Live ~9pm</div>
+    </nav>
+
+    <header class="hero">
+      <div class="logo-orb">
+        <img src="assets/logo.png" width="1688" height="1688" alt="nana — teal banana mark with stacked nana wordmark">
+      </div>
+      <p class="kicker">Japanese social live bar · Subang Jaya</p>
+      <h1>Date nights. Drinks. <span class="soft">Room to talk.</span></h1>
+      <p class="zh-line" lang="zh">适合约会、朋友小局和下班听歌。</p>
+
+      <div class="cta-stack">
+        <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
+        <div class="btn-row">
+          <a class="btn btn-ghost" href="https://maps.app.goo.gl/CddBMPbaehJuaard7" target="_blank" rel="noopener">Google Maps</a>
+          <a class="btn btn-ghost" href="https://instagram.com/nana.ss13" target="_blank" rel="noopener">@nana.ss13</a>
+        </div>
+      </div>
+      <p class="hint">Include date, time &amp; pax. Confirmations in English.</p>
+    </header>
+
+    <div class="ribbon" aria-label="Tonight’s essentials">
+      <span><b>5pm–2am</b> daily</span>
+      <span><b>~9pm</b> live</span>
+      <span><b>+60 12-897 4221</b></span>
+    </div>
+
+    <div class="policy-band">
+      <strong>Under-18 guests must leave by 8:30pm; strictly 18+ after.</strong> No cigarette smoking; e-cigarettes and vapes are OK.
+      <span lang="zh">未满 18 岁须在 8:30pm 前离开，之后严格 18+。不可抽烟，电子烟 / vape 可以。</span>
+    </div>
+
+    <main>
+
+      <section class="block" id="menu" aria-labelledby="menu-h">
+        <p class="block-label">01 — Menu</p>
+        <h2 id="menu-h">Food &amp; drinks<em>菜单</em></h2>
+        <div class="menu-grid">
+          <a class="menu-tile" href="assets/menu/food.pdf" target="_blank" rel="noopener">
+            <img class="thumb" src="assets/menu/food-preview-01.png" alt="nana food menu preview" width="600" height="800" loading="lazy">
+            <div class="meta">
+              <strong>Food <span lang="zh">餐单</span></strong>
+              <span class="open">Open PDF</span>
+            </div>
+          </a>
+          <a class="menu-tile" href="assets/menu/drinks.pdf" target="_blank" rel="noopener">
+            <img class="thumb" src="assets/menu/drinks-preview-1.png" alt="nana drinks menu preview" width="600" height="800" loading="lazy">
+            <div class="meta">
+              <strong>Drinks <span lang="zh">酒单</span></strong>
+              <span class="open">Open PDF</span>
+            </div>
+          </a>
+        </div>
+        <div class="menu-strip-wrap">
+          <p class="menu-strip-label">Food pages · swipe</p>
+          <div class="menu-strip" role="list">
+            <a href="assets/menu/food.pdf" target="_blank" rel="noopener" role="listitem"><img src="assets/menu/food-p1.jpg" alt="Food menu page 1" width="236" height="315" loading="lazy"></a>
+            <a href="assets/menu/food.pdf" target="_blank" rel="noopener" role="listitem"><img src="assets/menu/food-p2.jpg" alt="Food menu page 2" width="236" height="315" loading="lazy"></a>
+            <a href="assets/menu/food.pdf" target="_blank" rel="noopener" role="listitem"><img src="assets/menu/food-p3.jpg" alt="Food menu page 3" width="236" height="315" loading="lazy"></a>
+            <a href="assets/menu/food.pdf" target="_blank" rel="noopener" role="listitem"><img src="assets/menu/food-p4.jpg" alt="Food menu page 4" width="236" height="315" loading="lazy"></a>
+          </div>
+        </div>
+        <p class="menu-note">Tap a tile or page to open the full PDF menu.</p>
+      </section>
+
+      <section class="block" id="visit" aria-labelledby="visit-h">
+        <p class="block-label">02 — Visit</p>
+        <h2 id="visit-h">Plan your visit<em>来之前先看</em></h2>
+        <ul class="rule">
+          <li><span class="k">Address</span><span class="v">2 Jalan SS 13/3A<br>SS13, Subang Jaya</span></li>
+          <li><span class="k">Waze / Grab</span><span class="v">Search “nana SS13”</span></li>
+          <li><span class="k">Happy Hour</span><span class="v">Before 8:30pm · 8:30pm 前</span></li>
+          <li><span class="k">Seats</span><span class="v">About 350 · 约 350 位</span></li>
+        </ul>
+      </section>
+
+      <section class="block" id="book" aria-labelledby="book-h">
+        <p class="block-label">03 — Book</p>
+        <h2 id="book-h">Booking notes<em>订位说明</em></h2>
+        <ul class="rule">
+          <li><span class="k">Walk-in</span><span class="v">Welcome; WhatsApp ahead for groups</span></li>
+          <li><span class="k">Stage sofa</span><span class="v">RM300 · Fri/Sat/PH eves only</span></li>
+          <li><span class="k">Other days</span><span class="v">No sofa minimum on weekdays or PH day</span></li>
+        </ul>
+      </section>
+
+      <section class="block" id="contact" aria-labelledby="contact-h">
+        <p class="block-label">04 — Contact</p>
+        <h2 id="contact-h">Find us<em>联系 / 导航</em></h2>
+        <div class="contact-list">
+          <a href="tel:+60128974221">Call +60 12-897 4221 <span>Call</span></a>
+          <a href="https://wa.me/60128974221" target="_blank" rel="noopener">WhatsApp +60 12-897 4221 <span>Chat</span></a>
+          <a href="https://maps.app.goo.gl/CddBMPbaehJuaard7" target="_blank" rel="noopener">Google Maps pin <span>Maps</span></a>
+          <a href="https://waze.com/ul?q=nana%20SS13" target="_blank" rel="noopener">Waze: nana SS13 <span>Waze</span></a>
+          <a href="https://instagram.com/nana.ss13" target="_blank" rel="noopener">Instagram @nana.ss13 <span>IG</span></a>
+        </div>
+      </section>
+
+      <section class="block" id="faq" aria-labelledby="faq-h">
+        <p class="block-label">05 — FAQ</p>
+        <h2 id="faq-h">Quick answers<em>常见问题</em></h2>
+        <div class="faq">
+          <details open>
+            <summary>Can I bring someone under 18?</summary>
+            <p>Yes before 8:30pm, but they must leave by 8:30pm. After that, the venue is strictly 18+.<span lang="zh"><strong>未满 18 岁可以来吗？</strong> 可以，但须在 8:30pm 前离开，之后严格 18+。</span></p>
+          </details>
+          <details>
+            <summary>Can I vape?</summary>
+            <p>E-cigarettes and vapes are OK; cigarette smoking is not allowed.<span lang="zh"><strong>可以电子烟吗？</strong> 可以电子烟 / vape，场内不可抽烟。</span></p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer>nana 研酒所 · SS13, Subang Jaya</footer>
+  </div>
+  <div class="sticky">
+    <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
+  </div>
+</body>
+</html>
