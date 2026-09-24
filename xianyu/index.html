@@ -386,11 +386,29 @@
     .pager-wrap { margin-top: 22px; }
     .pager-head {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
       gap: 12px;
       margin-bottom: 8px;
     }
+    .pager-nav { display: flex; align-items: center; gap: 8px; }
+    .pager-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; padding: 0;
+      border-radius: 3px;
+      border: 1px solid rgba(255,90,31,.4);
+      background: rgba(255,90,31,.08);
+      color: var(--orange);
+      cursor: pointer;
+      transition: background .15s ease, border-color .15s ease, opacity .15s ease;
+    }
+    .pager-btn svg { width: 16px; height: 16px; display: block; }
+    .pager-btn:hover:not(:disabled) {
+      background: rgba(255,90,31,.2);
+      border-color: rgba(255,90,31,.7);
+    }
+    .pager-btn:active:not(:disabled) { transform: scale(.94); }
+    .pager-btn:disabled { opacity: .35; cursor: default; }
     .pager-label {
       font-size: .72rem;
       font-weight: 600;
@@ -436,6 +454,15 @@
       .sticky { display: none; }
       .hero { padding-top: 20px; }
       .rule li { grid-template-columns: 9rem 1fr; }
+      /* Thin visible scrollbar on desktop, where touch swipe isn't available */
+      .pager {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255,90,31,.5) rgba(244,238,228,.06);
+        padding-bottom: 10px;
+      }
+      .pager::-webkit-scrollbar { display: block; height: 6px; }
+      .pager::-webkit-scrollbar-track { background: rgba(244,238,228,.06); border-radius: 3px; }
+      .pager::-webkit-scrollbar-thumb { background: rgba(255,90,31,.5); border-radius: 3px; }
     }
     @media (max-width: 380px) {
       .rule li { grid-template-columns: 1fr; gap: 4px; }
@@ -523,7 +550,11 @@
         <div class="pager-wrap">
           <div class="pager-head">
             <p class="pager-label">Food pages · swipe 左右滑</p>
-            <p class="pager-count" data-count="food">1 / 4</p>
+            <div class="pager-nav">
+              <p class="pager-count" data-count="food">1 / 4</p>
+              <button class="pager-btn" type="button" data-prev="food" aria-label="Previous food menu page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+              <button class="pager-btn" type="button" data-next="food" aria-label="Next food menu page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+            </div>
           </div>
           <div class="pager" data-pager="food" aria-label="Food menu pages" tabindex="0">
             <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p1.jpg" alt="Food menu page 1 of 4" width="1367" height="2000" loading="lazy" decoding="async"></a>
@@ -535,7 +566,11 @@
         <div class="pager-wrap">
           <div class="pager-head">
             <p class="pager-label">Drinks pages · swipe 左右滑</p>
-            <p class="pager-count" data-count="drinks">1 / 4</p>
+            <div class="pager-nav">
+              <p class="pager-count" data-count="drinks">1 / 4</p>
+              <button class="pager-btn" type="button" data-prev="drinks" aria-label="Previous drinks menu page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+              <button class="pager-btn" type="button" data-next="drinks" aria-label="Next drinks menu page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+            </div>
           </div>
           <div class="pager" data-pager="drinks" aria-label="Drinks menu pages" tabindex="0">
             <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p1.jpg" alt="Drinks menu page 1 of 4" width="1367" height="2000" loading="lazy" decoding="async"></a>
@@ -618,23 +653,58 @@
   </div>
   <script>
     document.querySelectorAll("[data-pager]").forEach(function (pager) {
-      var count = document.querySelector('[data-count="' + pager.getAttribute("data-pager") + '"]');
+      var name = pager.getAttribute("data-pager");
+      var count = document.querySelector('[data-count="' + name + '"]');
+      var prev = document.querySelector('[data-prev="' + name + '"]');
+      var next = document.querySelector('[data-next="' + name + '"]');
       var pages = pager.querySelectorAll(".page");
       if (!count || !pages.length) return;
       var step = function () {
         var gap = parseFloat(getComputedStyle(pager).columnGap) || 10;
         return pages[0].offsetWidth + gap;
       };
+      var maxScroll = function () {
+        return pager.scrollWidth - pager.clientWidth;
+      };
       var update = function () {
         var i = Math.min(pages.length, Math.max(1, Math.round(pager.scrollLeft / step()) + 1));
         count.textContent = i + " / " + pages.length;
+        if (prev) prev.disabled = pager.scrollLeft <= 1;
+        if (next) next.disabled = pager.scrollLeft >= maxScroll() - 1;
       };
+      var go = function (dir) {
+        pager.scrollBy({ left: dir * step(), behavior: "smooth" });
+      };
+      if (prev) prev.addEventListener("click", function () { go(-1); });
+      if (next) next.addEventListener("click", function () { go(1); });
       pager.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
       pager.addEventListener("keydown", function (e) {
         if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
         e.preventDefault();
-        pager.scrollBy({ left: e.key === "ArrowRight" ? step() : -step(), behavior: "smooth" });
+        go(e.key === "ArrowRight" ? 1 : -1);
       });
+      // Map vertical wheel/trackpad to horizontal paging while over the pager.
+      // Deltas are accumulated and advance one snapped page at a time, because
+      // scroll-snap: mandatory re-snaps tiny scrollLeft nudges straight back.
+      var wheelAcc = 0, wheelLockUntil = 0;
+      pager.addEventListener("wheel", function (e) {
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+        var delta = e.deltaY;
+        if (e.deltaMode === 1) delta *= 32;
+        else if (e.deltaMode === 2) delta *= pager.clientWidth;
+        var canScroll = delta < 0 ? pager.scrollLeft > 0 : pager.scrollLeft < maxScroll() - 1;
+        if (!canScroll) { wheelAcc = 0; return; }
+        e.preventDefault();
+        var now = Date.now();
+        if (now < wheelLockUntil) return;
+        wheelAcc += delta;
+        if (Math.abs(wheelAcc) >= 60) {
+          go(wheelAcc > 0 ? 1 : -1);
+          wheelAcc = 0;
+          wheelLockUntil = now + 350;
+        }
+      }, { passive: false });
       update();
     });
   </script>
