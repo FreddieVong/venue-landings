@@ -1,19 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Venue landings</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d0c">
+  <meta name="description" content="Two live music bars in Klang Valley: nana 研酒所 in SS13 Subang Jaya (daily 5pm–2am) and Xianyu 咸鱼酒馆 in Taman Desa KL (daily 6:30pm–2:30am). Menus, hours and WhatsApp booking.">
+  <meta property="og:title" content="nana 研酒所 &amp; Xianyu 咸鱼酒馆 · Live music bars">
+  <meta property="og:description" content="Menus, hours and WhatsApp booking for nana 研酒所 (SS13 Subang Jaya) and Xianyu 咸鱼酒馆 (Taman Desa KL).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://freddievong.github.io/venue-landings/">
+  <link rel="canonical" href="https://freddievong.github.io/venue-landings/">
+  <title>nana 研酒所 &amp; Xianyu 咸鱼酒馆 · Live music bars in Klang Valley</title>
   <style>
-    body{font-family:system-ui,sans-serif;max-width:40rem;margin:3rem auto;padding:0 1.25rem;line-height:1.5}
-    a{color:#111}
+    :root {
+      --bg: #0b0d0c;
+      --cream: #f2eee5;
+      --muted: #a3a79f;
+      --line: rgba(242,238,229,.12);
+      --teal: #48B8A8;
+      --orange: #FF5A1F;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      background:
+        radial-gradient(ellipse 60% 40% at 15% -5%, rgba(72,184,168,.14), transparent 60%),
+        radial-gradient(ellipse 60% 40% at 90% 105%, rgba(255,90,31,.12), transparent 60%),
+        var(--bg);
+      min-height: 100vh;
+      color: var(--cream);
+      font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans SC", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; border-radius: 8px; }
+    .wrap {
+      width: min(680px, 100%);
+      margin: 0 auto;
+      padding: clamp(32px, 8vw, 64px) 20px 48px;
+    }
+    header { text-align: center; margin-bottom: clamp(28px, 6vw, 44px); }
+    .eyebrow {
+      font-size: .72rem; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: clamp(1.6rem, 6vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+    }
+    .sub { color: var(--muted); font-size: .95rem; margin-top: 10px; }
+    .cards { display: grid; gap: 18px; }
+    .card {
+      display: block;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.03);
+      padding: 20px;
+      transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .card:active { transform: scale(.99); }
+    .card-nana:hover { border-color: rgba(72,184,168,.55); box-shadow: 0 16px 40px rgba(72,184,168,.12); }
+    .card-xianyu:hover { border-color: rgba(255,90,31,.55); box-shadow: 0 16px 40px rgba(255,90,31,.12); }
+    .card-top { display: flex; align-items: center; gap: 16px; }
+    .logo-chip {
+      flex: 0 0 auto;
+      width: 84px; height: 84px;
+      border-radius: 14px;
+      background: #f4efe4;
+      display: grid; place-items: center;
+      overflow: hidden;
+    }
+    .logo-chip img { width: 74px; height: auto; display: block; }
+    .card h2 { font-size: 1.15rem; font-weight: 750; letter-spacing: -.01em; }
+    .card h2 [lang="zh"] { font-weight: 500; }
+    .card .tag {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .card-nana .tag { color: var(--teal); }
+    .card-xianyu .tag { color: var(--orange); }
+    .card .line { color: var(--muted); font-size: .88rem; margin-top: 4px; }
+    .card-facts {
+      display: flex; flex-wrap: wrap; gap: 6px 18px;
+      margin-top: 16px; padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: .82rem; color: var(--muted);
+    }
+    .card-facts b { color: var(--cream); font-weight: 650; }
+    .go {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: .85rem; font-weight: 700;
+    }
+    .card-nana .go { color: var(--teal); }
+    .card-xianyu .go { color: var(--orange); }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: .75rem; letter-spacing: .04em;
+      color: rgba(163,167,159,.75);
+    }
+    @media (max-width: 380px) {
+      .card-top { align-items: flex-start; }
+      .logo-chip { width: 64px; height: 64px; }
+      .logo-chip img { width: 56px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
   </style>
 </head>
 <body>
-  <h1>Venue landings</h1>
-  <ul>
-    <li><a href="./xianyu/">Xianyu 咸鱼酒馆</a></li>
-    <li><a href="./nana/">nana 研酒所</a></li>
-  </ul>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Two rooms · Two nights</p>
+      <h1>Live music bars in Klang Valley</h1>
+      <p class="sub">Menus, hours and WhatsApp booking for both venues. <span lang="zh">两家店的菜单、营业时间和订位。</span></p>
+    </header>
+
+    <main class="cards">
+      <a class="card card-nana" href="./nana/">
+        <div class="card-top">
+          <span class="logo-chip"><img src="nana/assets/logo.png" alt="nana 研酒所 logo" width="74" height="72" loading="lazy" decoding="async"></span>
+          <span>
+            <p class="tag">SS13 · Subang Jaya</p>
+            <h2>nana <span lang="zh">研酒所</span></h2>
+            <p class="line">Japanese social live bar — date nights, small groups.</p>
+          </span>
+        </div>
+        <div class="card-facts">
+          <span><b>5pm–2am</b> daily</span>
+          <span><b>~9pm</b> live</span>
+          <span><b>+60 12-897 4221</b></span>
+        </div>
+        <span class="go">Menu, hours &amp; booking →</span>
+      </a>
+
+      <a class="card card-xianyu" href="./xianyu/">
+        <div class="card-top">
+          <span class="logo-chip"><img src="xianyu/assets/logo.png" alt="Xianyu 咸鱼酒馆 logo" width="74" height="74" loading="lazy" decoding="async"></span>
+          <span>
+            <p class="tag">Union Tower · Taman Desa KL</p>
+            <h2>Xianyu <span lang="zh">咸鱼酒馆</span></h2>
+            <p class="line">Late-night live music bar — strictly 18+.</p>
+          </span>
+        </div>
+        <div class="card-facts">
+          <span><b>6:30pm–2:30am</b> daily</span>
+          <span><b>~9:30pm</b> live</span>
+          <span><b>+60 12-652 2885</b></span>
+        </div>
+        <span class="go">Menu, hours &amp; booking →</span>
+      </a>
+    </main>
+
+    <footer>nana 研酒所 · SS13 Subang Jaya &nbsp;·&nbsp; Xianyu 咸鱼酒馆 · Taman Desa KL</footer>
+  </div>
 </body>
 </html>

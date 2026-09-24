@@ -8,6 +8,9 @@
   <meta property="og:title" content="nana 研酒所 · SS13 Japanese social live bar">
   <meta property="og:description" content="Date nights, conversation and live music around 9pm at 2 Jalan SS 13/3A, SS13 Subang Jaya. Daily 5pm–2am.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://freddievong.github.io/venue-landings/nana/">
+  <meta property="og:image" content="https://freddievong.github.io/venue-landings/nana/assets/logo.png">
+  <link rel="canonical" href="https://freddievong.github.io/venue-landings/nana/">
   <title>nana 研酒所 · SS13 Japanese Social Live Bar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +38,20 @@
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; }
+    :focus-visible {
+      outline: 2px solid var(--teal-bright);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+    .skip {
+      position: absolute; left: 16px; top: -60px; z-index: 40;
+      background: var(--teal-bright); color: #04201c;
+      font-family: Outfit, sans-serif; font-weight: 700; font-size: .85rem;
+      padding: 12px 18px; border-radius: 999px;
+      text-decoration: none;
+      transition: top .15s ease;
+    }
+    .skip:focus { top: 14px; }
     .sky {
       position: fixed; inset: 0; pointer-events: none; z-index: 0;
       background:
@@ -242,21 +259,44 @@
 
     .faq details {
       border-bottom: 1px solid var(--line);
-      padding: 4px 0 14px;
-      margin-bottom: 4px;
     }
     .faq summary {
       list-style: none; cursor: pointer;
       font-family: Outfit, "Noto Sans SC", sans-serif;
-      font-weight: 700; font-size: 1.02rem;
-      padding: 10px 0;
-      display: flex; justify-content: space-between; gap: 16px;
+      font-weight: 700; font-size: 1rem;
+      line-height: 1.4;
+      min-height: 48px;
+      padding: 14px 2px;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
     }
     .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: "+"; color: var(--teal); font-weight: 700; }
-    .faq details[open] summary::after { content: "–"; }
-    .faq p { color: var(--muted); font-size: .93rem; }
-    .faq p [lang="zh"] { display: block; margin-top: 6px; }
+    .faq summary .q { flex: 1; }
+    .faq summary::after {
+      content: "";
+      flex: 0 0 auto;
+      width: 9px; height: 9px;
+      margin-top: .5em;
+      border-right: 2px solid var(--teal);
+      border-bottom: 2px solid var(--teal);
+      transform: rotate(45deg);
+      transition: transform .2s ease;
+    }
+    .faq details[open] summary::after { transform: rotate(225deg) translate(-2px, -2px); }
+    .faq summary [lang="zh"] {
+      font-family: "Noto Sans SC", sans-serif;
+      font-weight: 500;
+      color: var(--cream-soft);
+    }
+    .faq p {
+      color: var(--muted); font-size: .93rem;
+      padding: 0 2px 16px;
+      animation: faq-in .25s ease both;
+    }
+    .faq p [lang="zh"] { display: block; margin-top: 8px; }
+    @keyframes faq-in {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: none; }
+    }
 
     footer {
       margin-top: 36px; padding-top: 24px;
@@ -406,15 +446,18 @@
     "@context":"https://schema.org",
     "@type":"BarOrPub",
     "name":"nana 研酒所",
-    "description":"Japanese social live bar in SS13, Subang Jaya.",
+    "description":"Japanese social live bar in SS13, Subang Jaya. Live music around 9pm, open daily 5pm–2am.",
+    "url":"https://freddievong.github.io/venue-landings/nana/",
+    "image":"https://freddievong.github.io/venue-landings/nana/assets/logo.png",
     "telephone":"+60128974221",
-    "sameAs":["https://instagram.com/nana.ss13"],
+    "sameAs":["https://instagram.com/nana.ss13","https://maps.app.goo.gl/CddBMPbaehJuaard7"],
     "address":{"@type":"PostalAddress","streetAddress":"2 Jalan SS 13/3A","addressLocality":"Subang Jaya","addressRegion":"Selangor","addressCountry":"MY"},
     "openingHours":"Mo-Su 17:00-02:00"
   }
   </script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
   <div class="sky" aria-hidden="true"></div>
   <div class="dots" aria-hidden="true"></div>
   <div class="wrap">
@@ -425,11 +468,11 @@
 
     <header class="hero">
       <div class="logo-orb">
-        <img src="assets/logo.png" width="1688" height="1688" alt="nana — teal banana mark with stacked nana wordmark">
+        <img src="assets/logo.png" width="1206" height="1173" fetchpriority="high" decoding="async" alt="nana — teal banana mark with stacked nana wordmark">
       </div>
       <p class="kicker">Japanese social live bar · Subang Jaya</p>
-      <h1>Date nights. Drinks. <span class="soft">Room to talk.</span></h1>
-      <p class="zh-line" lang="zh">适合约会、朋友小局和下班听歌。</p>
+      <h1>Date nights. Friends. <span class="soft">Live around 9.</span></h1>
+      <p class="zh-line" lang="zh">约会、朋友小聚，9 点左右开唱。</p>
 
       <div class="cta-stack">
         <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
@@ -438,7 +481,7 @@
           <a class="btn btn-ghost" href="https://instagram.com/nana.ss13" target="_blank" rel="noopener">@nana.ss13</a>
         </div>
       </div>
-      <p class="hint">Include date, time &amp; pax. Confirmations in English.</p>
+      <p class="hint">Include date, time &amp; pax. Confirmations come in English; chat in English or <span lang="zh">中文</span>.</p>
     </header>
 
     <div class="ribbon" aria-label="Tonight’s essentials">
@@ -452,21 +495,21 @@
       <span lang="zh">未满 18 岁须在 8:30pm 前离开，之后严格 18+。不可抽烟，电子烟 / vape 可以。</span>
     </div>
 
-    <main>
+    <main id="main">
 
       <section class="block" id="menu" aria-labelledby="menu-h">
         <p class="block-label">01 — Menu</p>
         <h2 id="menu-h">Food &amp; drinks<em>菜单</em></h2>
         <div class="menu-grid">
           <a class="menu-tile" href="assets/menu/food.pdf" target="_blank" rel="noopener">
-            <img class="thumb" src="assets/menu/food-preview-01.png" alt="nana food menu preview" width="1132" height="1600" loading="lazy">
+            <img class="thumb" src="assets/menu/food-preview-01.png" alt="nana food menu preview" width="1132" height="1600" loading="lazy" decoding="async">
             <div class="meta">
               <strong>Food <span lang="zh">餐单</span></strong>
               <span class="open">Open PDF</span>
             </div>
           </a>
           <a class="menu-tile" href="assets/menu/drinks.pdf" target="_blank" rel="noopener">
-            <img class="thumb" src="assets/menu/drinks-preview-1.png" alt="nana drinks menu preview" width="993" height="1404" loading="lazy">
+            <img class="thumb" src="assets/menu/drinks-preview-1.png" alt="nana drinks menu preview" width="993" height="1404" loading="lazy" decoding="async">
             <div class="meta">
               <strong>Drinks <span lang="zh">酒单</span></strong>
               <span class="open">Open PDF</span>
@@ -478,19 +521,19 @@
             <p class="pager-label">Food pages · swipe 左右滑</p>
             <p class="pager-count" data-count="food">1 / 12</p>
           </div>
-          <div class="pager" data-pager="food" aria-label="Food menu pages">
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p1.jpg" alt="Food menu page 1 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p2.jpg" alt="Food menu page 2 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p3.jpg" alt="Food menu page 3 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p4.jpg" alt="Food menu page 4 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p5.jpg" alt="Food menu page 5 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p6.jpg" alt="Food menu page 6 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p7.jpg" alt="Food menu page 7 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p8.jpg" alt="Food menu page 8 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p9.jpg" alt="Food menu page 9 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p10.jpg" alt="Food menu page 10 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p11.jpg" alt="Food menu page 11 of 12" width="1414" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p12.jpg" alt="Food menu page 12 of 12" width="1414" height="2000" loading="lazy"></a>
+          <div class="pager" data-pager="food" aria-label="Food menu pages" tabindex="0">
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p1.jpg" alt="Food menu page 1 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p2.jpg" alt="Food menu page 2 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p3.jpg" alt="Food menu page 3 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p4.jpg" alt="Food menu page 4 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p5.jpg" alt="Food menu page 5 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p6.jpg" alt="Food menu page 6 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p7.jpg" alt="Food menu page 7 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p8.jpg" alt="Food menu page 8 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p9.jpg" alt="Food menu page 9 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p10.jpg" alt="Food menu page 10 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p11.jpg" alt="Food menu page 11 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p12.jpg" alt="Food menu page 12 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
           </div>
         </div>
         <div class="pager-wrap">
@@ -498,14 +541,14 @@
             <p class="pager-label">Drinks pages · swipe 左右滑</p>
             <p class="pager-count" data-count="drinks">1 / 4</p>
           </div>
-          <div class="pager" data-pager="drinks" aria-label="Drinks menu pages">
-            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p1.jpg" alt="Drinks menu page 1 of 4" width="1415" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p2.jpg" alt="Drinks menu page 2 of 4" width="1415" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p3.jpg" alt="Drinks menu page 3 of 4" width="1415" height="2000" loading="lazy"></a>
-            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p4.jpg" alt="Drinks menu page 4 of 4" width="1415" height="2000" loading="lazy"></a>
+          <div class="pager" data-pager="drinks" aria-label="Drinks menu pages" tabindex="0">
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p1.jpg" alt="Drinks menu page 1 of 4" width="1415" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p2.jpg" alt="Drinks menu page 2 of 4" width="1415" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p3.jpg" alt="Drinks menu page 3 of 4" width="1415" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p4.jpg" alt="Drinks menu page 4 of 4" width="1415" height="2000" loading="lazy" decoding="async"></a>
           </div>
         </div>
-        <p class="menu-note">Swipe to read every page. Tap a tile or page to open the full PDF menu.</p>
+        <p class="menu-note">Swipe to browse every page; tap any page to open the full PDF.</p>
       </section>
 
       <section class="block" id="visit" aria-labelledby="visit-h">
@@ -514,8 +557,9 @@
         <ul class="rule">
           <li><span class="k">Address</span><span class="v">2 Jalan SS 13/3A<br>SS13, Subang Jaya</span></li>
           <li><span class="k">Waze / Grab</span><span class="v">Search “nana SS13”</span></li>
-          <li><span class="k">Happy Hour</span><span class="v">Before 8:30pm · 8:30pm 前</span></li>
-          <li><span class="k">Seats</span><span class="v">About 350 · 约 350 位</span></li>
+          <li><span class="k">Happy Hour</span><span class="v">Before 8:30pm · <span lang="zh">8:30pm 前</span></span></li>
+          <li><span class="k">Seats</span><span class="v">About 350 · <span lang="zh">约 350 位</span></span></li>
+          <li><span class="k">Lineup</span><span class="v">Full week posted on Instagram every Monday · <span lang="zh">每周一 IG 公布</span></span></li>
         </ul>
       </section>
 
@@ -523,9 +567,11 @@
         <p class="block-label">03 — Book</p>
         <h2 id="book-h">Booking notes<em>订位说明</em></h2>
         <ul class="rule">
-          <li><span class="k">Walk-in</span><span class="v">Welcome; WhatsApp ahead for groups</span></li>
-          <li><span class="k">Stage sofa</span><span class="v">RM300 · Fri/Sat/PH eves only</span></li>
-          <li><span class="k">Other days</span><span class="v">No sofa minimum on weekdays or PH day</span></li>
+          <li><span class="k">Walk-in</span><span class="v">Welcome daily; WhatsApp ahead on Fri/Sat/PH eves</span></li>
+          <li><span class="k">Stage sofa</span><span class="v">RM300 minimum · Fri/Sat/PH eves only<br>Weekdays &amp; the PH day itself: no sofa minimum</span></li>
+          <li><span class="k">Deposit</span><span class="v">None · we hold your table ~15 minutes</span></li>
+          <li><span class="k">Payment</span><span class="v">All payment types &amp; split bills OK<br>Prices exclude service charge &amp; SST</span></li>
+          <li><span class="k">Private room</span><span class="v">None</span></li>
         </ul>
       </section>
 
@@ -533,11 +579,11 @@
         <p class="block-label">04 — Contact</p>
         <h2 id="contact-h">Find us<em>联系 / 导航</em></h2>
         <div class="contact-list">
-          <a href="tel:+60128974221">Call +60 12-897 4221 <span>Call</span></a>
-          <a href="https://wa.me/60128974221" target="_blank" rel="noopener">WhatsApp +60 12-897 4221 <span>Chat</span></a>
-          <a href="https://maps.app.goo.gl/CddBMPbaehJuaard7" target="_blank" rel="noopener">Google Maps pin <span>Maps</span></a>
-          <a href="https://waze.com/ul?q=nana%20SS13" target="_blank" rel="noopener">Waze: nana SS13 <span>Waze</span></a>
-          <a href="https://instagram.com/nana.ss13" target="_blank" rel="noopener">Instagram @nana.ss13 <span>IG</span></a>
+          <a href="tel:+60128974221">+60 12-897 4221 <span>Call</span></a>
+          <a href="https://wa.me/60128974221" target="_blank" rel="noopener">+60 12-897 4221 <span>WhatsApp</span></a>
+          <a href="https://maps.app.goo.gl/CddBMPbaehJuaard7" target="_blank" rel="noopener">Google Maps pin <span>Open</span></a>
+          <a href="https://waze.com/ul?q=nana%20SS13" target="_blank" rel="noopener">Waze “nana SS13” <span>Open</span></a>
+          <a href="https://instagram.com/nana.ss13" target="_blank" rel="noopener">@nana.ss13 <span>Instagram</span></a>
         </div>
       </section>
 
@@ -545,13 +591,25 @@
         <p class="block-label">05 — FAQ</p>
         <h2 id="faq-h">Quick answers<em>常见问题</em></h2>
         <div class="faq">
-          <details open>
-            <summary>Can I bring someone under 18?</summary>
-            <p>Yes before 8:30pm, but they must leave by 8:30pm. After that, the venue is strictly 18+.<span lang="zh"><strong>未满 18 岁可以来吗？</strong> 可以，但须在 8:30pm 前离开，之后严格 18+。</span></p>
+          <details>
+            <summary><span class="q">Can I bring someone under 18? · <span lang="zh">可以带未满 18 岁的朋友吗？</span></span></summary>
+            <p>Yes, in the early evening — under-18 guests must leave by 8:30pm, and the venue is strictly 18+ after that.<span lang="zh">可以在傍晚时段来，未满 18 岁须在 8:30pm 前离开，之后严格 18+。</span></p>
           </details>
           <details>
-            <summary>Can I vape?</summary>
-            <p>E-cigarettes and vapes are OK; cigarette smoking is not allowed.<span lang="zh"><strong>可以电子烟吗？</strong> 可以电子烟 / vape，场内不可抽烟。</span></p>
+            <summary><span class="q">Can I smoke or vape? · <span lang="zh">可以抽烟或电子烟吗？</span></span></summary>
+            <p>E-cigarettes and vapes are fine; cigarette smoking is not allowed inside.<span lang="zh">电子烟 / vape 可以，场内不可抽烟。</span></p>
+          </details>
+          <details>
+            <summary><span class="q">Is there a minimum spend? · <span lang="zh">有最低消费吗？</span></span></summary>
+            <p>Only the stage sofa carries a RM300 minimum, and only on Fri, Sat and PH-eve nights. On weekdays and the PH day itself there is no sofa minimum.<span lang="zh">只有舞台沙发有 RM300 最低消费，且仅限周五、周六和公假前夕。平日和公假当天没有沙发最低消费。</span></p>
+          </details>
+          <details>
+            <summary><span class="q">Do I need to book? Is there a deposit? · <span lang="zh">需要订位吗？要订金吗？</span></span></summary>
+            <p>Walk-ins are welcome any day; on Fri, Sat and PH eves it&rsquo;s worth a WhatsApp ahead. No deposit — we hold your table for about 15 minutes past your booking time. Confirmations come in English, and you can chat with us in English or Chinese.<span lang="zh">每天都欢迎 walk-in；周五、周六和公假前夕建议先 WhatsApp 订位。无需订金，座位保留约 15 分钟。确认信息为英文，聊天用中文或英文都可以。</span></p>
+          </details>
+          <details>
+            <summary><span class="q">What are the hours, and when does the band play? · <span lang="zh">几点营业？现场几点开始？</span></span></summary>
+            <p>We&rsquo;re open 5pm–2am daily, and live music usually starts around 9pm. The full week&rsquo;s lineup is posted on Instagram every Monday.<span lang="zh">每天 5pm–2am 营业，现场大约 9pm 开始。每周一在 Instagram 公布整周演出安排。</span></p>
           </details>
         </div>
       </section>
@@ -567,13 +625,20 @@
       var count = document.querySelector('[data-count="' + pager.getAttribute("data-pager") + '"]');
       var pages = pager.querySelectorAll(".page");
       if (!count || !pages.length) return;
-      var update = function () {
+      var step = function () {
         var gap = parseFloat(getComputedStyle(pager).columnGap) || 10;
-        var step = pages[0].offsetWidth + gap;
-        var i = Math.min(pages.length, Math.max(1, Math.round(pager.scrollLeft / step) + 1));
+        return pages[0].offsetWidth + gap;
+      };
+      var update = function () {
+        var i = Math.min(pages.length, Math.max(1, Math.round(pager.scrollLeft / step()) + 1));
         count.textContent = i + " / " + pages.length;
       };
       pager.addEventListener("scroll", update, { passive: true });
+      pager.addEventListener("keydown", function (e) {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+        e.preventDefault();
+        pager.scrollBy({ left: e.key === "ArrowRight" ? step() : -step(), behavior: "smooth" });
+      });
       update();
     });
   </script>
