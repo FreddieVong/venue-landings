@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://freddievong.github.io/venue-landings/sitemap.xml
