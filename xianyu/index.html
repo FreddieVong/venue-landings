@@ -303,10 +303,8 @@
     .menu-tile .thumb {
       display: block;
       width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      object-position: top center;
-      background: #1a1714;
+      height: auto;
+      background: #f7f1e6;
     }
     .menu-tile .meta {
       padding: 12px 12px 14px;
@@ -342,6 +340,55 @@
       margin-top: 12px;
       font-size: .76rem;
       color: rgba(168,159,145,.85);
+    }
+
+    /* Full-width menu pager — one readable page at a time */
+    .pager-wrap { margin-top: 22px; }
+    .pager-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .pager-label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .pager-count {
+      font-family: Syne, sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--orange);
+      white-space: nowrap;
+    }
+    .pager {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .pager::-webkit-scrollbar { display: none; }
+    .pager .page {
+      flex: 0 0 90%;
+      scroll-snap-align: center;
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #f7f1e6;
+      text-decoration: none;
+    }
+    .pager .page img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     @media (min-width: 700px) {
@@ -416,21 +463,45 @@
         <h2 id="menu-h">Food &amp; drinks<em>菜单</em></h2>
         <div class="menu-grid">
           <a class="menu-tile" href="assets/menu/food.pdf" target="_blank" rel="noopener">
-            <img class="thumb" src="assets/menu/food-preview-1.png" alt="Xianyu food menu preview" width="600" height="800" loading="lazy">
+            <img class="thumb" src="assets/menu/food-preview-1.png" alt="Xianyu food menu preview" width="865" height="1267" loading="lazy">
             <div class="meta">
               <strong>Food <span lang="zh">餐单</span></strong>
               <span class="open">Open PDF</span>
             </div>
           </a>
           <a class="menu-tile" href="assets/menu/drinks.pdf" target="_blank" rel="noopener">
-            <img class="thumb" src="assets/menu/drinks-preview-1.png" alt="Xianyu drinks menu preview" width="600" height="800" loading="lazy">
+            <img class="thumb" src="assets/menu/drinks-preview-1.png" alt="Xianyu drinks menu preview" width="865" height="1267" loading="lazy">
             <div class="meta">
               <strong>Drinks <span lang="zh">酒单</span></strong>
               <span class="open">Open PDF</span>
             </div>
           </a>
         </div>
-        <p class="menu-note">Tap a tile to open the full PDF menu.</p>
+        <div class="pager-wrap">
+          <div class="pager-head">
+            <p class="pager-label">Food pages · swipe 左右滑</p>
+            <p class="pager-count" data-count="food">1 / 4</p>
+          </div>
+          <div class="pager" data-pager="food" aria-label="Food menu pages">
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p1.jpg" alt="Food menu page 1 of 4" width="1367" height="2000" loading="lazy"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p2.jpg" alt="Food menu page 2 of 4" width="1367" height="2000" loading="lazy"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p3.jpg" alt="Food menu page 3 of 4" width="1367" height="2000" loading="lazy"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p4.jpg" alt="Food menu page 4 of 4" width="1367" height="2000" loading="lazy"></a>
+          </div>
+        </div>
+        <div class="pager-wrap">
+          <div class="pager-head">
+            <p class="pager-label">Drinks pages · swipe 左右滑</p>
+            <p class="pager-count" data-count="drinks">1 / 4</p>
+          </div>
+          <div class="pager" data-pager="drinks" aria-label="Drinks menu pages">
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p1.jpg" alt="Drinks menu page 1 of 4" width="1367" height="2000" loading="lazy"></a>
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p2.jpg" alt="Drinks menu page 2 of 4" width="1367" height="2000" loading="lazy"></a>
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p3.jpg" alt="Drinks menu page 3 of 4" width="1367" height="2000" loading="lazy"></a>
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p4.jpg" alt="Drinks menu page 4 of 4" width="1367" height="2000" loading="lazy"></a>
+          </div>
+        </div>
+        <p class="menu-note">Swipe to read every page. Tap a tile or page to open the full PDF menu.</p>
       </section>
 
       <section class="block" id="visit" aria-labelledby="visit-h">
@@ -487,5 +558,20 @@
   <div class="sticky">
     <a class="btn btn-primary" href="https://wa.me/60126522885?text=Hi%20Xianyu%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
   </div>
+  <script>
+    document.querySelectorAll("[data-pager]").forEach(function (pager) {
+      var count = document.querySelector('[data-count="' + pager.getAttribute("data-pager") + '"]');
+      var pages = pager.querySelectorAll(".page");
+      if (!count || !pages.length) return;
+      var update = function () {
+        var gap = parseFloat(getComputedStyle(pager).columnGap) || 10;
+        var step = pages[0].offsetWidth + gap;
+        var i = Math.min(pages.length, Math.max(1, Math.round(pager.scrollLeft / step) + 1));
+        count.textContent = i + " / " + pages.length;
+      };
+      pager.addEventListener("scroll", update, { passive: true });
+      update();
+    });
+  </script>
 </body>
 </html>
