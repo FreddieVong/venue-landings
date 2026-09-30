@@ -4,22 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#071412">
-  <meta name="description" content="nana 研酒所 — Japanese social live music bar at 2 Jalan SS 13/3A, SS13 Subang Jaya. Open daily 5pm–2am, live music from about 9pm. WhatsApp +60 12-897 4221 to book.">
+  <meta name="description" content="nana 研酒所 — Japanese social live music bar at 2 Jalan SS 13/3A, SS13 Subang Jaya. Dinner from 5pm, live music from about 9pm, open daily till 2am. Happy hour before 8:30pm. WhatsApp +60 12-897 4221 to book.">
   <meta property="og:site_name" content="nana 研酒所 &amp; Xianyu 咸鱼酒馆">
   <meta property="og:title" content="nana 研酒所 · Live Music Bar in SS13 Subang Jaya">
-  <meta property="og:description" content="Japanese social live bar at 2 Jalan SS 13/3A, SS13 Subang Jaya. Daily 5pm–2am, live around 9pm. WhatsApp +60 12-897 4221 to book.">
+  <meta property="og:description" content="Dinner first, music later. Daily 5pm–2am at 2 Jalan SS 13/3A, SS13 Subang Jaya; live around 9pm. WhatsApp +60 12-897 4221 to book.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://freddievong.github.io/venue-landings/nana/">
-  <meta property="og:image" content="https://freddievong.github.io/venue-landings/nana/assets/logo.png">
+  <meta property="og:image" content="https://freddievong.github.io/venue-landings/nana/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="nana 研酒所 · live music bar, SS13 Subang Jaya · daily 5pm–2am · live around 9pm">
   <meta property="og:locale" content="en_MY">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="nana 研酒所 · Live Music Bar in SS13 Subang Jaya">
-  <meta name="twitter:description" content="Japanese social live bar at 2 Jalan SS 13/3A, SS13 Subang Jaya. Daily 5pm–2am, live around 9pm. WhatsApp +60 12-897 4221 to book.">
-  <meta name="twitter:image" content="https://freddievong.github.io/venue-landings/nana/assets/logo.png">
+  <meta name="twitter:description" content="Dinner first, music later. Daily 5pm–2am at 2 Jalan SS 13/3A, SS13 Subang Jaya; live around 9pm. WhatsApp +60 12-897 4221 to book.">
+  <meta name="twitter:image" content="https://freddievong.github.io/venue-landings/nana/assets/og-card.png">
   <link rel="canonical" href="https://freddievong.github.io/venue-landings/nana/">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
-  <title>nana 研酒所 · Live Music Bar in SS13 Subang Jaya</title>
+  <title>nana 研酒所 · Live Music Bar in SS13 Subang Jaya · 梳邦现场音乐酒吧</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -486,6 +489,60 @@
       font-size: .76rem;
       color: rgba(154,175,168,.85);
     }
+    /* The whole menu as text, so search engines and assistants can read it */
+    .menu-text { margin-top: 26px; }
+    .menu-text h3 {
+      font-family: Outfit, "Noto Sans SC", sans-serif;
+      font-size: 1.05rem; font-weight: 700;
+      letter-spacing: -.01em;
+      margin-bottom: 4px;
+    }
+    .menu-text > p { color: var(--muted); font-size: .84rem; margin-bottom: 8px; }
+    .menu-text details { border-bottom: 1px solid var(--line); }
+    .menu-text summary {
+      list-style: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+      min-height: 48px; padding: 13px 2px;
+      font-family: Outfit, "Noto Sans SC", sans-serif;
+      font-weight: 700; font-size: .95rem;
+    }
+    .menu-text summary::-webkit-details-marker { display: none; }
+    .menu-text summary [lang="zh"] {
+      font-family: "Noto Sans SC", sans-serif;
+      font-weight: 500; font-size: .82rem;
+      color: var(--muted);
+    }
+    .menu-text summary::after {
+      content: "";
+      flex: 0 0 auto;
+      width: 8px; height: 8px;
+      margin-left: auto;
+      border-right: 2px solid var(--teal);
+      border-bottom: 2px solid var(--teal);
+      transform: rotate(45deg) translateY(-3px);
+      transition: transform .2s ease;
+    }
+    .menu-text details[open] summary::after { transform: rotate(225deg); }
+    .menu-text .sub { color: var(--muted); font-size: .82rem; padding: 0 2px 6px; }
+    .menu-text ul { list-style: none; padding: 0 2px 14px; }
+    .menu-text li {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+      padding: 7px 0;
+      font-size: .9rem;
+      color: var(--cream-soft);
+      border-bottom: 1px dashed rgba(243,239,230,.07);
+    }
+    .menu-text li:last-child { border-bottom: 0; }
+    .menu-text li small { display: block; color: var(--muted); font-size: .78rem; }
+    .menu-text .p {
+      flex: 0 0 auto;
+      text-align: right;
+      font-family: Outfit, sans-serif;
+      font-weight: 600;
+      color: var(--cream);
+      white-space: nowrap;
+    }
+    .menu-text .p small { color: var(--teal); font-weight: 600; font-family: "DM Sans", sans-serif; }
 
     @media (min-width: 700px) {
       .wrap { padding: 28px 28px 48px; }
@@ -517,17 +574,28 @@
     "@id": "https://freddievong.github.io/venue-landings/nana/#venue",
     "name": "nana 研酒所",
     "alternateName": ["研酒所", "nana", "nana SS13"],
-    "description": "Japanese social live music bar in SS13, Subang Jaya. Open daily 5pm–2am; live music starts around 9pm. Under-18 guests must leave by 8:30pm; strictly 18+ after.",
+    "description": "Japanese social live music bar in SS13, Subang Jaya. Dinner from 5pm, live music from around 9pm, open daily until 2am. Happy hour before 8:30pm. Under-18 guests must leave by 8:30pm; strictly 18+ after.",
     "url": "https://freddievong.github.io/venue-landings/nana/",
-    "image": "https://freddievong.github.io/venue-landings/nana/assets/logo.png",
+    "image": [
+      "https://freddievong.github.io/venue-landings/nana/assets/og-card.png",
+      "https://freddievong.github.io/venue-landings/nana/assets/logo.png"
+    ],
     "logo": "https://freddievong.github.io/venue-landings/nana/assets/logo.png",
     "telephone": "+60128974221",
     "currenciesAccepted": "MYR",
+    "priceRange": "RM10–RM60 (food)",
+    "servesCuisine": ["Japanese", "Fusion", "Western"],
     "smokingAllowed": false,
     "acceptsReservations": "https://wa.me/60128974221",
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Live music nightly from around 9pm", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Happy hour before 8:30pm", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Bottle keeping (spirits 60 days, beer 30 days)", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Late-night ramen 9:30pm–12:30am", "value": true }
+    ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2, Jalan SS 13/3A, SS13",
+      "streetAddress": "2, Jalan SS 13/3A, Subang Jaya Industrial Estate",
       "addressLocality": "Subang Jaya",
       "addressRegion": "Selangor",
       "postalCode": "47500",
@@ -548,6 +616,12 @@
       }
     ],
     "hasMenu": [
+      {
+        "@type": "Menu",
+        "name": "nana 研酒所 full menu (text, prices in RM)",
+        "url": "https://freddievong.github.io/venue-landings/nana/#menu-text",
+        "inLanguage": ["en", "zh"]
+      },
       {
         "@type": "Menu",
         "name": "nana 研酒所 food menu (PDF)",
@@ -632,6 +706,54 @@
           "@type": "Answer",
           "text": "Open 5pm–2am daily; live music usually starts around 9pm. The full week's lineup is posted on Instagram (@nana.ss13) every Monday. 每天 5pm–2am 营业，现场大约 9pm 开始。每周一在 Instagram 公布整周演出安排。"
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Does nana 研酒所 serve food?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — dinner first, music later. The kitchen serves 800g pots of fresh clams (lala) from RM50, crispy hand-rolls from RM12, hand-wrap rice, pasta, pork and chicken chops, bar snacks and 3-inch cakes. Late-night ramen runs 9:30pm–12:30am. 有的，先吃饭再听歌：800g 啦啦锅 RM50 起、脆皮手卷 RM12 起、意面、扒类、小吃和 3 寸蛋糕；深夜拉面 9:30pm–12:30am。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a happy hour at nana 研酒所?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, before 8:30pm: beer buckets (5 bottles) are buy 1 free 1, 10 glasses of Guinness are RM175, crispy hand-rolls start at RM6.80 and the pork chop, chargrilled chicken and chicken chop are RM16.80. 8:30pm 前：啤酒桶（5 瓶）买一送一，Guinness 10 杯 RM175，手卷 RM6.80 起，扒类 RM16.80。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I keep an unfinished bottle at nana 研酒所?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Spirits bottles are kept for 60 days and unfinished beer for 30 days. 洋酒可寄存 60 天，啤酒可寄存 30 天。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is nana 研酒所 halal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. nana is a bar, and the menu includes pork and alcohol. 非清真：菜单有猪肉和酒精饮料。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does nana 研酒所 have non-alcoholic drinks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Most of the signature cocktails come in an alcohol-free version, from RM25. 大部分招牌鸡尾酒都有无酒精版本，RM25 起。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I celebrate a birthday at nana 研酒所?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. In your birthday month the Flaming Lamborghini is RM68 instead of RM128, and 3-inch cakes are RM28–RM29. WhatsApp +60 12-897 4221 ahead to hold a table. 生日月火焰兰博基尼只要 RM68（原价 RM128），3 寸蛋糕 RM28–29。建议先 WhatsApp 订位。"
+        }
       }
     ]
   }
@@ -653,7 +775,7 @@
       </div>
       <p class="kicker">Japanese social live bar · Subang Jaya</p>
       <h1><span class="h1-brand">nana <span lang="zh">研酒所</span> · SS13 Subang Jaya</span>Date nights. Friends. <span class="soft">Live around 9.</span></h1>
-      <p class="zh-line" lang="zh">约会、朋友小聚，9 点左右开唱。</p>
+      <p class="zh-line" lang="zh">梳邦 SS13 现场音乐酒吧 · 约会、朋友小聚，9 点左右开唱。</p>
 
       <div class="cta-stack">
         <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
@@ -682,12 +804,15 @@
         <p class="block-label">00 — At a glance</p>
         <h2 id="facts-h">Key facts<em>基本信息</em></h2>
         <ul class="facts-list">
-          <li>nana 研酒所 is a Japanese social live music bar at 2 Jalan SS 13/3A, SS13, 47500 Subang Jaya, Selangor, Malaysia.</li>
+          <li>nana 研酒所 is a Japanese social live music bar at 2 Jalan SS 13/3A, Subang Jaya Industrial Estate, 47500 Subang Jaya, Selangor, Malaysia.</li>
           <li>Open 5pm–2am daily; live music starts around 9pm.</li>
+          <li>Dinner first, music later: fresh clam pots, crispy hand-rolls, pasta and chops, with late-night ramen from 9:30pm to 12:30am. <a href="#menu-text">See the menu</a>.</li>
+          <li>Happy hour before 8:30pm: beer buckets buy 1 free 1, hand-rolls from RM6.80, chops RM16.80.</li>
           <li>Book on WhatsApp at <a href="https://wa.me/60128974221" target="_blank" rel="noopener">+60 12-897 4221</a>.</li>
           <li>Under-18 guests must leave by 8:30pm; strictly 18+ after 8:30pm.</li>
+          <li>Non-halal: the menu includes pork and alcohol.</li>
           <li>For directions, search “nana SS13” on Waze or Grab, or open the <a href="https://maps.app.goo.gl/CddBMPbaehJuaard7" target="_blank" rel="noopener">Google Maps pin</a>.</li>
-          <li lang="zh">研酒所位于 Subang Jaya SS13（2 Jalan SS 13/3A），每天 5pm–2am 营业，现场约 9pm 开始，WhatsApp +60 12-897 4221 订位。</li>
+          <li lang="zh">研酒所位于梳邦再也 SS13（2 Jalan SS 13/3A），每天 5pm–2am 营业，先吃饭后听歌，现场约 9pm 开始；8:30pm 前有欢乐时光。WhatsApp +60 12-897 4221 订位。</li>
         </ul>
       </section>
 
@@ -751,15 +876,175 @@
           </div>
         </div>
         <p class="menu-note">Swipe (or use the arrows / scroll wheel on desktop) to browse every page; tap any page to open the full PDF.</p>
+
+        <div class="menu-text" id="menu-text">
+          <h3>The menu, in text <span lang="zh">菜单文字版</span></h3>
+          <p>Prices in RM, before 10% service charge and SST. Copied from the September 2026 menu; if anything differs, the PDF is the latest.</p>
+
+          <details>
+            <summary>Fresh clams (lala), 800g pot <span lang="zh">啦啦锅</span></summary>
+            <ul>
+              <li><span>Curry + Parmesan <small>House signature: fresh clams in Maggi curry, finished with shredded parmesan</small></span><span class="p">55</span></li>
+              <li><span>Cream + Bacon <small>Creamy sauce with bacon</small></span><span class="p">55</span></li>
+              <li><span>Salted Egg <small>Rich salted egg sauce</small></span><span class="p">59</span></li>
+              <li><span>Pesto Sauce <small>Fragrant pesto sauce</small></span><span class="p">57</span></li>
+              <li><span>Black Pepper <small>Light black pepper clear soup</small></span><span class="p">50</span></li>
+              <li><span>Add-on: fried buns <small>6 golden fried buns for dipping into the sauce</small></span><span class="p">8</span></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Crispy hand-rolls <span lang="zh">脆皮手卷</span></summary>
+            <p class="sub">Crunchy seaweed, fresh toppings, made to order.</p>
+            <ul>
+              <li><span>Eel</span><span class="p">13<small>7.80 before 8:30pm</small></span></li>
+              <li><span>Salmon</span><span class="p">12<small>6.80 before 8:30pm</small></span></li>
+              <li><span>Prawn</span><span class="p">12<small>6.80 before 8:30pm</small></span></li>
+              <li><span>Abalone</span><span class="p">13<small>7.80 before 8:30pm</small></span></li>
+              <li><span>Negitoro</span><span class="p">18<small>10.80 before 8:30pm</small></span></li>
+              <li><span>Engawa</span><span class="p">15<small>8.80 before 8:30pm</small></span></li>
+              <li><span>Sweet prawn (raw)</span><span class="p">13<small>7.80 before 8:30pm</small></span></li>
+              <li><span>Chef’s pick trio <small>Chef picks 3</small></span><span class="p">40<small>25 before 8:30pm</small></span></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Hand-wrap rice <span lang="zh">海苔手包饭</span></summary>
+            <p class="sub">Seasoned Japanese rice with crispy seaweed sheets, wrapped your way.</p>
+            <ul>
+              <li><span>Engawa <small>Torched flounder fin</small></span><span class="p">35</span></li>
+              <li><span>Sweet shrimps (raw)</span><span class="p">30</span></li>
+              <li><span>Salmon</span><span class="p">28</span></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Snacks &amp; bites to share <span lang="zh">小吃</span></summary>
+            <ul>
+              <li><span>Truffle fries</span><span class="p">25</span></li>
+              <li><span>Fried pork strips</span><span class="p">22</span></li>
+              <li><span>Fried squid tentacles</span><span class="p">19</span></li>
+              <li><span>Arabiki sausage</span><span class="p">19</span></li>
+              <li><span>Fried baby shrimp</span><span class="p">18</span></li>
+              <li><span>Tebasaki wings</span><span class="p">18</span></li>
+              <li><span>Golden tofu bites</span><span class="p">16</span></li>
+              <li><span>Golden chicken popcorn</span><span class="p">15</span></li>
+              <li><span>Sweet potato fries</span><span class="p">15</span></li>
+              <li><span>Basic fries</span><span class="p">12</span></li>
+              <li><span>Edamame + salt</span><span class="p">10</span></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>À la carte &amp; pasta <span lang="zh">主餐 · 意面</span></summary>
+            <ul>
+              <li><span>Herb-seared pork chop</span><span class="p">28<small>16.80 before 8:30pm</small></span></li>
+              <li><span>Chargrilled chicken</span><span class="p">28<small>16.80 before 8:30pm</small></span></li>
+              <li><span>Golden chicken chop</span><span class="p">28<small>16.80 before 8:30pm</small></span></li>
+              <li><span>Lean chicken plate <small>Grilled chicken breast, broccoli, cherry tomato, mashed potato, pumpkin-carrot purée; about 420 kcal</small></span><span class="p">25</span></li>
+              <li><span>Truffle + engawa + mushroom pasta</span><span class="p">42.80</span></li>
+              <li><span>Bacon mentaiko carbonara</span><span class="p">34.80</span></li>
+              <li><span>Grilled chicken pasta</span><span class="p">28.80</span></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Late-night ramen, 9:30pm–12:30am <span lang="zh">深夜拉面</span></summary>
+            <ul>
+              <li><span>Prawn &amp; egg ramen <small>Prawns, fried egg and spring onions in a comforting broth</small></span><span class="p">23.80</span></li>
+              <li><span>Bacon &amp; egg ramen <small>Crispy bacon, fried egg and spring onions in a rich broth</small></span><span class="p">18.80</span></li>
+              <li><span>Chicken &amp; egg ramen <small>Grilled chicken, fried egg and spring onions in a rich broth</small></span><span class="p">17.80</span></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>3-inch cakes <span lang="zh">3 寸蛋糕</span></summary>
+            <ul>
+              <li><span>Hazelnut layered <small>Creamy hazelnut and milk chocolate</small></span><span class="p">29</span></li>
+              <li><span>Matcha <small>Japanese matcha with a crunchy base</small></span><span class="p">29</span></li>
+              <li><span>Tiramisu tart <small>Coffee ganache, dusted cocoa, crunchy tart shell</small></span><span class="p">28</span></li>
+              <li><span>Chocolate yuzu <small>Chocolate with Japanese yuzu and a crunchy base</small></span><span class="p">28</span></li>
+              <li><span>Pistachio raspberry <small>Creamy pistachio with raspberry gelée</small></span><span class="p">28</span></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Beer &amp; happy hour <span lang="zh">啤酒 · 欢乐时光</span></summary>
+            <p class="sub">Happy hour before 8:30pm: buckets (5 bottles) buy 1 free 1; Guinness 10 glasses for RM175. Can’t finish? We keep beer for 30 days.</p>
+            <ul>
+              <li><span>Tiger Crystal bucket (5 bottles) <small>3 buckets 318</small></span><span class="p">118</span></li>
+              <li><span>Tiger bucket (5 bottles) <small>3 buckets 338</small></span><span class="p">128</span></li>
+              <li><span>Heineken bucket (5 bottles) <small>3 buckets 368</small></span><span class="p">138</span></li>
+              <li><span>Guinness, per glass <small>10 glasses 235</small></span><span class="p">32</span></li>
+              <li><span>Tiger carton, 24 × 330ml</span><span class="p">478</span></li>
+              <li><span>Heineken carton, 24 × 330ml</span><span class="p">558</span></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Cocktails <span lang="zh">鸡尾酒</span></summary>
+            <p class="sub">Top 3: 好运咸鱼, 握草 and 躺苹. Price in brackets is the alcohol-free version.</p>
+            <ul lang="zh">
+              <li><span>鲨B</span><span class="p">65<small>(55)</small></span></li>
+              <li><span>好运咸鱼</span><span class="p">45</span></li>
+              <li><span>握草</span><span class="p">45<small>(35)</small></span></li>
+              <li><span>躺苹</span><span class="p">45<small>(35)</small></span></li>
+              <li><span>夏风</span><span class="p">45</span></li>
+              <li><span>伯牙绝弦</span><span class="p">35<small>(25)</small></span></li>
+              <li><span>抹香荔影</span><span class="p">35</span></li>
+              <li><span>酸沙梨</span><span class="p">35<small>(25)</small></span></li>
+              <li><span>舔狗</span><span class="p">35<small>(25)</small></span></li>
+              <li><span>柠檬冰茶</span><span class="p">35<small>(25)</small></span></li>
+              <li><span>遇见</span><span class="p">35<small>(25)</small></span></li>
+              <li><span>月下</span><span class="p">35<small>(25)</small></span></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Shots &amp; umeshu <span lang="zh">一口杯 · 梅酒</span></summary>
+            <ul>
+              <li><span>Flaming Lamborghini <span lang="zh">火焰兰博基尼</span> <small>RM68 in your birthday month</small></span><span class="p">128</span></li>
+              <li><span>Fresh lime Bacardi <span lang="zh">香柠百加得</span>, 6 shots</span><span class="p">98</span></li>
+              <li><span>Jägerbomb <span lang="zh">野格炸弹</span> <small>10 for 188</small></span><span class="p">35</span></li>
+              <li><span>Choya Yuzu umeshu <span lang="zh">柚子梅酒</span> <small>Best seller · 3 bottles 748</small></span><span class="p">278</span></li>
+              <li><span>Choya Uji-cha umeshu <span lang="zh">宇治茶梅酒</span> <small>3 bottles 598</small></span><span class="p">228</span></li>
+              <li><span>Choya Honey umeshu <span lang="zh">蜂蜜梅酒</span> <small>No added sugar · 3 bottles 598</small></span><span class="p">228</span></li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Bottles &amp; wine <span lang="zh">洋酒 · 红酒</span></summary>
+            <p class="sub">Price per bottle, then for 2. Spirits can be kept for 60 days.</p>
+            <ul>
+              <li><span>Kweichow Moutai <span lang="zh">贵州茅台</span> <small>2 for 6,300</small></span><span class="p">3,588</span></li>
+              <li><span>Clase Azul Reposado <small>2 for 4,800</small></span><span class="p">2,688</span></li>
+              <li><span>Dom Pérignon <small>2 for 3,400</small></span><span class="p">1,888</span></li>
+              <li><span>Hennessy XO <small>2 for 3,000</small></span><span class="p">1,688</span></li>
+              <li><span>Martell Cordon Bleu <small>2 for 2,700</small></span><span class="p">1,488</span></li>
+              <li><span>Johnnie Walker XR 21 <small>2 for 1,950</small></span><span class="p">1,088</span></li>
+              <li><span>The Macallan 12 <small>2 for 1,588</small></span><span class="p">888</span></li>
+              <li><span>Hennessy VSOP <small>2 for 1,150</small></span><span class="p">638</span></li>
+              <li><span>Johnnie Walker Gold Label Reserve <small>2 for 1,150</small></span><span class="p">638</span></li>
+              <li><span>The Singleton 12 <small>2 for 1,000</small></span><span class="p">588</span></li>
+              <li><span>Moët &amp; Chandon Impérial <small>2 for 1,000 · 6 for 2,800</small></span><span class="p">568</span></li>
+              <li><span>Roku gin <small>2 for 770</small></span><span class="p">428</span></li>
+              <li><span>Sottano Reserva Malbec <small>Argentina</small></span><span class="p">338</span></li>
+              <li><span>Cremaschi Furlotti Gran Reserva Carmenère <small>Chile</small></span><span class="p">268</span></li>
+              <li><span>Hardys VR Cabernet Sauvignon <small>Australia</small></span><span class="p">208</span></li>
+            </ul>
+          </details>
+        </div>
       </section>
 
       <section class="block" id="visit" aria-labelledby="visit-h">
         <p class="block-label">02 — Visit</p>
         <h2 id="visit-h">Plan your visit<em>来之前先看</em></h2>
         <ul class="rule">
-          <li><span class="k">Address</span><span class="v">2 Jalan SS 13/3A<br>SS13, 47500 Subang Jaya, Selangor</span></li>
+          <li><span class="k">Address</span><span class="v">2 Jalan SS 13/3A, Subang Jaya Industrial Estate<br>SS13, 47500 Subang Jaya, Selangor</span></li>
           <li><span class="k">Waze / Grab</span><span class="v">Search “nana SS13”</span></li>
-          <li><span class="k">Happy Hour</span><span class="v">Before 8:30pm · <span lang="zh">8:30pm 前</span></span></li>
+          <li><span class="k">Happy Hour</span><span class="v">Before 8:30pm · <span lang="zh">8:30pm 前</span><br>Buckets buy 1 free 1 · hand-rolls from RM6.80</span></li>
+          <li><span class="k">Kitchen</span><span class="v">Dinner from 5pm · late-night ramen 9:30pm–12:30am</span></li>
+          <li><span class="k">Bottle keeping</span><span class="v">Spirits 60 days · beer 30 days · <span lang="zh">洋酒寄存 60 天</span></span></li>
           <li><span class="k">Seats</span><span class="v">About 350 · <span lang="zh">约 350 位</span></span></li>
           <li><span class="k">Lineup</span><span class="v">Full week posted on Instagram every Monday · <span lang="zh">每周一 IG 公布</span></span></li>
         </ul>
@@ -812,6 +1097,30 @@
           <details>
             <summary><span class="q">What are the hours, and when does the band play? · <span lang="zh">几点营业？现场几点开始？</span></span></summary>
             <p>We&rsquo;re open 5pm–2am daily, and live music usually starts around 9pm. The full week&rsquo;s lineup is posted on Instagram every Monday.<span lang="zh">每天 5pm–2am 营业，现场大约 9pm 开始。每周一在 Instagram 公布整周演出安排。</span></p>
+          </details>
+          <details>
+            <summary><span class="q">Do you serve food? · <span lang="zh">有吃的吗？</span></span></summary>
+            <p>Yes — dinner first, music later. 800g pots of fresh clams (lala) from RM50, crispy hand-rolls from RM12, hand-wrap rice, pasta, chops, bar snacks and 3-inch cakes. Late-night ramen runs 9:30pm–12:30am. <a href="#menu-text">Full menu</a>.<span lang="zh">有的，先吃饭再听歌：800g 啦啦锅 RM50 起、脆皮手卷 RM12 起、意面、扒类、小吃和 3 寸蛋糕；深夜拉面 9:30pm–12:30am。</span></p>
+          </details>
+          <details>
+            <summary><span class="q">Is there a happy hour? · <span lang="zh">有欢乐时光吗？</span></span></summary>
+            <p>Yes, before 8:30pm: beer buckets (5 bottles) are buy 1 free 1, 10 glasses of Guinness are RM175, crispy hand-rolls start at RM6.80, and the pork chop, chargrilled chicken and chicken chop are RM16.80.<span lang="zh">8:30pm 前：啤酒桶（5 瓶）买一送一，Guinness 10 杯 RM175，手卷 RM6.80 起，扒类 RM16.80。</span></p>
+          </details>
+          <details>
+            <summary><span class="q">Can I keep an unfinished bottle? · <span lang="zh">酒可以寄存吗？</span></span></summary>
+            <p>Yes. Spirits bottles are kept for 60 days and unfinished beer for 30 days.<span lang="zh">洋酒可寄存 60 天，啤酒可寄存 30 天。</span></p>
+          </details>
+          <details>
+            <summary><span class="q">Is nana halal? · <span lang="zh">是清真吗？</span></span></summary>
+            <p>No. nana is a bar, and the menu includes pork and alcohol.<span lang="zh">非清真：菜单有猪肉和酒精饮料。</span></p>
+          </details>
+          <details>
+            <summary><span class="q">Do you have non-alcoholic drinks? · <span lang="zh">有无酒精饮料吗？</span></span></summary>
+            <p>Yes. Most of the signature cocktails come in an alcohol-free version, from RM25.<span lang="zh">大部分招牌鸡尾酒都有无酒精版本，RM25 起。</span></p>
+          </details>
+          <details>
+            <summary><span class="q">Can I celebrate a birthday here? · <span lang="zh">可以来庆生吗？</span></span></summary>
+            <p>Yes. In your birthday month the Flaming Lamborghini is RM68 instead of RM128, and 3-inch cakes are RM28–RM29. WhatsApp ahead to hold a table.<span lang="zh">生日月火焰兰博基尼只要 RM68（原价 RM128），3 寸蛋糕 RM28–29。建议先 WhatsApp 订位。</span></p>
           </details>
         </div>
       </section>
