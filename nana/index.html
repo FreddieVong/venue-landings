@@ -274,6 +274,10 @@
     .rule .k { color: var(--muted); font-size: .84rem; font-weight: 500; }
     .rule .v { font-weight: 600; font-size: .95rem; line-height: 1.45; }
 
+    .play-body { color: var(--cream-soft); font-size: .93rem; padding-top: 6px; }
+    .play-body [lang="zh"] { display: block; margin-top: 6px; color: var(--muted); }
+    .play-btn { width: 100%; margin-top: 16px; }
+
     .contact-list { padding-top: 8px; }
     .contact-list a {
       display: flex; justify-content: space-between; align-items: center;
@@ -752,7 +756,15 @@
         "name": "Can I celebrate a birthday at nana 研酒所?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. In your birthday month the Flaming Lamborghini is RM68 instead of RM128, and 3-inch cakes are RM28–RM29. WhatsApp +60 12-897 4221 ahead to hold a table. 生日月火焰兰博基尼只要 RM68（原价 RM128），3 寸蛋糕 RM28–29。建议先 WhatsApp 订位。"
+          "text": "Yes. In your birthday month the Flaming Lamborghini is RM68 instead of RM128, and 3-inch cakes are RM28–RM29. Nana Play members get a free birthday treat: a mini cake or a Flaming Lamborghini. WhatsApp +60 12-897 4221 ahead to hold a table. 生日月火焰兰博基尼只要 RM68（原价 RM128），3 寸蛋糕 RM28–29。Nana Play 会员另有免费生日礼：迷你蛋糕或火焰兰博基尼。建议先 WhatsApp 订位。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does nana 研酒所 have a membership or loyalty programme?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Nana Play. Every RM100 on your bill earns a chip, and chips buy fries, cocktails, even a bottle of champagne, one reward a night. Join free at https://nana.pingan.today/ with a Malaysian phone number; nothing to download. 有，Nana Play。账单每 RM100 赚 1 个筹码，可换薯条、鸡尾酒，甚至整瓶香槟，每晚一份奖励。在 nana.pingan.today 免费加入，不用下载 App。"
         }
       }
     ]
@@ -779,7 +791,7 @@
 
       <div class="cta-stack">
         <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
-        <a class="btn btn-ghost" href="https://nana.pingan.today/lineup">This week’s line-up · <span lang="zh">本周阵容</span></a>
+        <a class="btn btn-ghost" href="https://nana.pingan.today/lineup">This week’s line-up&nbsp;·&nbsp;<span lang="zh">本周阵容</span></a>
         <div class="btn-row">
           <a class="btn btn-ghost" href="https://maps.app.goo.gl/CddBMPbaehJuaard7" target="_blank" rel="noopener">Google Maps</a>
           <a class="btn btn-ghost" href="https://instagram.com/nana.ss13" target="_blank" rel="noopener">@nana.ss13</a>
@@ -811,6 +823,7 @@
           <li>Happy hour before 8:30pm: beer buckets buy 1 free 1, hand-rolls from RM6.80, chops RM16.80.</li>
           <li>Book on WhatsApp at <a href="https://wa.me/60128974221" target="_blank" rel="noopener">+60 12-897 4221</a>.</li>
           <li>Under-18 guests must leave by 8:30pm; strictly 18+ after 8:30pm.</li>
+          <li>Nana Play membership: every RM100 on your bill earns a chip for fries, cocktails or champagne. Free to join at <a href="https://nana.pingan.today/">nana.pingan.today</a>.</li>
           <li>Non-halal: the menu includes pork and alcohol.</li>
           <li>For directions, search “nana SS13” on Waze or Grab, or open the <a href="https://maps.app.goo.gl/CddBMPbaehJuaard7" target="_blank" rel="noopener">Google Maps pin</a>.</li>
           <li lang="zh">研酒所位于梳邦再也 SS13（2 Jalan SS 13/3A），每天 5pm–2am 营业，先吃饭后听歌，现场约 9pm 开始；8:30pm 前有欢乐时光。WhatsApp +60 12-897 4221 订位。</li>
@@ -1037,8 +1050,15 @@
         </div>
       </section>
 
+      <section class="block" id="nana-play" aria-labelledby="play-h">
+        <p class="block-label">02 — Nana Play</p>
+        <h2 id="play-h">Your bill = free drinks<em>账单换免费饮品</em></h2>
+        <p class="play-body">Every RM100 on your bill earns a chip for fries, cocktails, even a bottle of champagne. Free to join, nothing to download.<span lang="zh">账单每 RM100 赚 1 个筹码，可换薯条、鸡尾酒，甚至整瓶香槟。免费加入，不用下载 App。</span></p>
+        <a class="btn btn-ghost play-btn" href="https://nana.pingan.today/">Join free&nbsp;·&nbsp;<span lang="zh">免费加入</span></a>
+      </section>
+
       <section class="block" id="visit" aria-labelledby="visit-h">
-        <p class="block-label">02 — Visit</p>
+        <p class="block-label">03 — Visit</p>
         <h2 id="visit-h">Plan your visit<em>来之前先看</em></h2>
         <ul class="rule">
           <li><span class="k">Address</span><span class="v">2 Jalan SS 13/3A, Subang Jaya Industrial Estate<br>SS13, 47500 Subang Jaya, Selangor</span></li>
@@ -1052,7 +1072,7 @@
       </section>
 
       <section class="block" id="book" aria-labelledby="book-h">
-        <p class="block-label">03 — Book</p>
+        <p class="block-label">04 — Book</p>
         <h2 id="book-h">Booking notes<em>订位说明</em></h2>
         <ul class="rule">
           <li><span class="k">Walk-in</span><span class="v">Welcome daily; WhatsApp ahead on Fri/Sat/PH eves</span></li>
@@ -1064,7 +1084,7 @@
       </section>
 
       <section class="block" id="contact" aria-labelledby="contact-h">
-        <p class="block-label">04 — Contact</p>
+        <p class="block-label">05 — Contact</p>
         <h2 id="contact-h">Find us<em>联系 / 导航</em></h2>
         <div class="contact-list">
           <a href="tel:+60128974221">+60 12-897 4221 <span>Call</span></a>
@@ -1076,7 +1096,7 @@
       </section>
 
       <section class="block" id="faq" aria-labelledby="faq-h">
-        <p class="block-label">05 — FAQ</p>
+        <p class="block-label">06 — FAQ</p>
         <h2 id="faq-h">Quick answers<em>常见问题</em></h2>
         <div class="faq">
           <details>
@@ -1121,7 +1141,11 @@
           </details>
           <details>
             <summary><span class="q">Can I celebrate a birthday here? · <span lang="zh">可以来庆生吗？</span></span></summary>
-            <p>Yes. In your birthday month the Flaming Lamborghini is RM68 instead of RM128, and 3-inch cakes are RM28–RM29. WhatsApp ahead to hold a table.<span lang="zh">生日月火焰兰博基尼只要 RM68（原价 RM128），3 寸蛋糕 RM28–29。建议先 WhatsApp 订位。</span></p>
+            <p>Yes. In your birthday month the Flaming Lamborghini is RM68 instead of RM128, and 3-inch cakes are RM28–RM29. Nana Play members get a free birthday treat: a mini cake or a Flaming Lamborghini. WhatsApp ahead to hold a table.<span lang="zh">生日月火焰兰博基尼只要 RM68（原价 RM128），3 寸蛋糕 RM28–29。Nana Play 会员另有免费生日礼：迷你蛋糕或火焰兰博基尼。建议先 WhatsApp 订位。</span></p>
+          </details>
+          <details>
+            <summary><span class="q">Is there a membership? · <span lang="zh">有会员吗？</span></span></summary>
+            <p>Yes, Nana Play. Every RM100 on your bill earns a chip, and chips buy fries, cocktails, even a bottle of champagne, one reward a night. Join free at <a href="https://nana.pingan.today/">nana.pingan.today</a>; nothing to download.<span lang="zh">有，Nana Play。账单每 RM100 赚 1 个筹码，可换薯条、鸡尾酒，甚至整瓶香槟，每晚一份奖励。在 nana.pingan.today 免费加入，不用下载 App。</span></p>
           </details>
         </div>
       </section>
