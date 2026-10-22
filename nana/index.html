@@ -10,7 +10,7 @@
   <meta property="og:description" content="Dinner first, music later. Daily 5pm–2am at 2 Jalan SS 13/3A, SS13 Subang Jaya; live from 9pm. WhatsApp +60 12-897 4221 to book.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://freddievong.github.io/venue-landings/nana/">
-  <meta property="og:image" content="https://freddievong.github.io/venue-landings/nana/assets/og-card.png">
+  <meta property="og:image" content="https://freddievong.github.io/venue-landings/nana/assets/og-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="nana 研酒所 · live music bar, SS13 Subang Jaya · daily 5pm–2am · live from 9pm">
@@ -18,15 +18,44 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="nana 研酒所 · Live Music Bar in SS13 Subang Jaya">
   <meta name="twitter:description" content="Dinner first, music later. Daily 5pm–2am at 2 Jalan SS 13/3A, SS13 Subang Jaya; live from 9pm. WhatsApp +60 12-897 4221 to book.">
-  <meta name="twitter:image" content="https://freddievong.github.io/venue-landings/nana/assets/og-card.png">
+  <meta name="twitter:image" content="https://freddievong.github.io/venue-landings/nana/assets/og-card.jpg">
   <link rel="canonical" href="https://freddievong.github.io/venue-landings/nana/">
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <title>nana 研酒所 · Live Music Bar in SS13 Subang Jaya · 梳邦现场音乐酒吧</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <style>
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/instrument-sans-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+picture{display:contents}
+.week{padding-top:40px}
+.week-note{color:var(--ink-3);font-size:13.5px;margin-top:6px}
+.poster{display:block;margin-top:16px;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);max-width:30rem;background:var(--mist)}
+.poster img{display:block;width:100%;height:auto}
+.days{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;margin-top:16px;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.day{flex:0 0 78%;max-width:22rem;scroll-snap-align:start;text-decoration:none;color:inherit}
+.day .poster{margin-top:8px}
+.day b{font-size:13px;font-weight:700;color:var(--ink-3)}
+.day.today b{color:var(--accent-text)}
+.day.today b::after{content:" · Tonight 今晚";}
+.proof{padding-top:48px}
+.rating{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:6px}
+.rating strong{font-size:2.4rem;font-weight:700;letter-spacing:-.03em;line-height:1}
+.rating .stars{color:var(--accent-text);font-size:1.1rem;letter-spacing:.05em}
+.rating small{color:var(--ink-3);font-size:13px}
+.quotes{display:grid;gap:10px;margin-top:18px;list-style:none;padding:0}
+.quotes li{border:1px solid var(--line);border-radius:var(--r-md);padding:16px;border-left:3px solid var(--rule)}
+.quotes q{display:block;font-size:15.5px;line-height:1.5;color:var(--ink);quotes:"“" "”"}
+.quotes cite{display:block;margin-top:8px;font-style:normal;font-size:12.5px;font-weight:600;color:var(--ink-3)}
+@media(min-width:760px){.quotes{grid-template-columns:repeat(3,1fr)}.days .day{flex-basis:15rem}main #week,main #proof{grid-column:1/-1}}
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+
 :root{--paper:#fff;--mist:#f6f8f7;--mist-deep:#eef2f0;--line:#e7ece9;--line-strong:#d6deda;
 --ink:#172923;--ink-2:#56675f;--ink-3:#64756f;--r-xs:6px;--r-sm:10px;--r-md:14px;--r-lg:18px;--gutter:1.25rem;--max:1040px;--hero:#fff;--on-hero:#172923;--on-hero-line:#d6deda;--on-hero-hover:#f6f8f7;--rule:#3FB4A7;--btn:#3FB4A7;--btn-deep:#36A094;--on-btn:#0B2B27;--on-accent-btn:#0B2B27;--accent:#1C7A70;--accent-text:#1C736F;--accent-soft:#E4F2F0;--accent-btn:#3FB4A7;--logo-bg:#fff;}
 *{box-sizing:border-box;margin:0}
@@ -157,7 +186,7 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-si
 }
 @media(max-width:380px){.rule li{grid-template-columns:1fr;gap:4px}.ribbon,.pulse{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-.nav-brand .lock,.nav-brand .lock span,.h1-brand .lock{opacity:1}.h1-brand:has(.lock){opacity:1}.lock{display:inline-flex;align-items:flex-start;gap:.35em;line-height:1;color:#14453d}.lock .lt{font-weight:500;letter-spacing:-.01em}.lock .wm{display:block;height:2.1em;width:auto;margin:-.08em 0 -1.1em}.nav-brand{font-size:1.15rem;padding-bottom:.6em}.lock-lg{font-size:1.6rem;margin:0 0 .9em}.h1-brand .lock-lg{display:inline-flex}</style>
+.nav-brand .lock,.nav-brand .lock span,.h1-brand .lock{opacity:1}.h1-brand:has(.lock){opacity:1}.lock{display:inline-flex;align-items:flex-start;gap:.35em;line-height:1;color:#14453d}.lock .lt{font-weight:500;letter-spacing:-.01em}.lock .wm{display:block;height:2.1em;width:auto;margin:-.08em 0 -1.1em}.nav-brand{font-size:1.15rem;padding-bottom:.6em}.lock-lg{font-size:1.6rem;margin:0 0 .9em}.h1-brand .lock-lg{display:inline-flex}.reel{margin:24px 0 0;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:#111;aspect-ratio:16/9}.reel video{display:block;width:100%;height:100%;object-fit:cover}.reel-cap{margin-top:8px;font-size:12.5px;font-weight:600;color:var(--accent-text)}</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -168,7 +197,7 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-si
     "description": "Japanese social live music bar in SS13, Subang Jaya. Dinner from 5pm, live music from 9pm, open daily until 2am. Happy hour before 8:30pm. Under-18 guests must leave by 8:30pm; strictly 18+ after.",
     "url": "https://freddievong.github.io/venue-landings/nana/",
     "image": [
-      "https://freddievong.github.io/venue-landings/nana/assets/og-card.png",
+      "https://freddievong.github.io/venue-landings/nana/assets/og-card.jpg",
       "https://freddievong.github.io/venue-landings/nana/assets/logo.png"
     ],
     "logo": "https://freddievong.github.io/venue-landings/nana/assets/logo.png",
@@ -370,16 +399,16 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <div class="wrap">
     <div class="top">
     <nav class="nav" aria-label="Brand">
-      <a class="nav-brand" href="./" style="text-decoration:none"><span class="lock"><span class="lt" aria-hidden="true">nana</span><img class="wm" src="assets/wordmark-yanjiusuo.png" width="1186" height="732" alt="nana 研酒所"></span></a>
+      <a class="nav-brand" href="./" style="text-decoration:none"><span class="lock"><span class="lt" aria-hidden="true">nana</span><img class="wm" src="assets/img/wordmark-480.png" srcset="assets/img/wordmark-240.png 240w, assets/img/wordmark-480.png 480w" sizes="120px" width="1186" height="732" decoding="async" alt="nana 研酒所"></span></a>
       <div class="nav-chip">SS13 · Live 9pm</div>
     </nav>
 
     <header class="hero">
       <div class="logo-orb">
-        <img src="assets/logo.png" width="1206" height="1173" fetchpriority="high" decoding="async" alt="nana 研酒所 logo — teal banana mark with stacked nana wordmark">
+        <picture><source type="image/webp" srcset="assets/img/logo-300.webp 300w, assets/img/logo-600.webp 600w" sizes="(min-width:760px) 300px, 132px"><img src="assets/img/logo-600.jpg" srcset="assets/img/logo-300.jpg 300w, assets/img/logo-600.jpg 600w" sizes="(min-width:760px) 300px, 132px" width="1190" height="1173" fetchpriority="high" decoding="async" alt="nana 研酒所 logo — teal banana mark with stacked nana wordmark"></picture>
       </div>
       <p class="kicker">Japanese social live bar · Subang Jaya</p>
-      <h1><span class="h1-brand"><span class="lock lock-lg"><span class="lt" aria-hidden="true">nana</span><img class="wm" src="assets/wordmark-yanjiusuo.png" width="1186" height="732" alt="nana 研酒所"></span></span>Date nights. Friends. <span class="soft">Live from 9.</span></h1>
+      <h1><span class="h1-brand"><span class="lock lock-lg"><span class="lt" aria-hidden="true">nana</span><img class="wm" src="assets/img/wordmark-480.png" srcset="assets/img/wordmark-240.png 240w, assets/img/wordmark-480.png 480w" sizes="120px" width="1186" height="732" decoding="async" alt="nana 研酒所"></span></span>Date nights. Friends. <span class="soft">Live from 9.</span></h1>
       <p class="zh-line" lang="zh">梳邦 SS13 现场音乐酒吧 · 约会、朋友小聚，9 点开唱。</p>
 
       <div class="cta-stack">
@@ -394,6 +423,14 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     </header>
     </div>
 
+    <figure class="reel-wrap" style="margin:0">
+      <div class="reel"><video autoplay muted loop playsinline preload="metadata" poster="assets/video/nana-live-poster.jpg" width="960" height="540" aria-label="A live night at nana 研酒所, SS13 Subang Jaya">
+        <source src="assets/video/nana-live.webm" type="video/webm">
+        <source src="assets/video/nana-live.mp4" type="video/mp4">
+      </video></div>
+      <figcaption class="reel-cap">A night at nana · live from 9pm</figcaption>
+    </figure>
+
     <div class="ribbon" aria-label="Tonight’s essentials">
       <span><b>5pm–2am</b> daily</span>
       <span><b>9pm</b> live</span>
@@ -406,6 +443,25 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     </div>
 
     <main id="main">
+
+      <section class="block week" id="week" aria-labelledby="week-h">
+        <p class="block-label">This week</p>
+        <h2 id="week-h">Line-up, 19–25 Oct<em>本周阵容</em></h2>
+        <p class="week-note">Live from 9pm nightly. The new poster goes up every Monday; the latest is always at <a href="https://nana.pingan.today/lineup">nana.pingan.today/lineup</a>.</p>
+        <a class="poster" href="https://nana.pingan.today/lineup"><picture><source type="image/webp" srcset="assets/lineup/week-2026-10-19-540.webp 540w, assets/lineup/week-2026-10-19-1080.webp 1080w" sizes="(min-width:760px) 480px, 92vw"><img src="assets/lineup/week-2026-10-19-1080.jpg" srcset="assets/lineup/week-2026-10-19-540.jpg 540w, assets/lineup/week-2026-10-19-1080.jpg 1080w" sizes="(min-width:760px) 480px, 92vw" width="1080" height="1350" loading="lazy" decoding="async" alt="nana 研酒所 weekly line-up poster, 19–25 October"></picture></a>
+      </section>
+
+      <section class="block proof" id="proof" aria-labelledby="proof-h">
+        <p class="block-label">Guests say</p>
+        <h2 id="proof-h">Rated on Google<em>谷歌评价</em></h2>
+        <div class="rating"><strong>4.7</strong><span class="stars" aria-hidden="true">★</span><small>from 221 Google reviews · as of 23 Sep 2026</small></div>
+        <ul class="quotes">
+          <li><q>The staff were friendly, the service was attentive, and the atmosphere was very comfortable and relaxing.</q><cite>luxx studio · Google review</cite></li>
+          <li><q>Amazing selection and the friendliest staff around!</q><cite>harbock s. · Google review</cite></li>
+          <li><q>Very cheap food and alcohol before 8.30pm. Amazing service from the staff as well ❤️</q><cite>Jayden P. · Google review</cite></li>
+        </ul>
+        <p class="week-note"><a href="https://maps.app.goo.gl/CddBMPbaehJuaard7" target="_blank" rel="noopener">Read all reviews on Google Maps</a></p>
+      </section>
 
       <section class="block" id="facts" aria-labelledby="facts-h">
         <p class="block-label">00 — At a glance</p>
@@ -429,14 +485,14 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
         <h2 id="menu-h">Food &amp; drinks<em>菜单</em></h2>
         <div class="menu-grid">
           <a class="menu-tile" href="assets/menu/food.pdf" target="_blank" rel="noopener">
-            <img class="thumb" src="assets/menu/food-preview-01.png" alt="nana food menu preview" width="1132" height="1600" loading="lazy" decoding="async">
+            <picture><source type="image/webp" srcset="assets/img/food-preview-01-400.webp 400w, assets/img/food-preview-01-800.webp 800w" sizes="(min-width:760px) 480px, 45vw"><img class="thumb" src="assets/img/food-preview-01-800.jpg" srcset="assets/img/food-preview-01-400.jpg 400w, assets/img/food-preview-01-800.jpg 800w" sizes="(min-width:760px) 480px, 45vw" width="1132" height="1600" loading="lazy" decoding="async" alt="nana food menu preview"></picture>
             <div class="meta">
               <strong>Food <span lang="zh">餐单</span></strong>
               <span class="open">Open PDF</span>
             </div>
           </a>
           <a class="menu-tile" href="assets/menu/drinks.pdf" target="_blank" rel="noopener">
-            <img class="thumb" src="assets/menu/drinks-preview-1.png" alt="nana drinks menu preview" width="993" height="1404" loading="lazy" decoding="async">
+            <picture><source type="image/webp" srcset="assets/img/drinks-preview-1-400.webp 400w, assets/img/drinks-preview-1-800.webp 800w" sizes="(min-width:760px) 480px, 45vw"><img class="thumb" src="assets/img/drinks-preview-1-800.jpg" srcset="assets/img/drinks-preview-1-400.jpg 400w, assets/img/drinks-preview-1-800.jpg 800w" sizes="(min-width:760px) 480px, 45vw" width="993" height="1404" loading="lazy" decoding="async" alt="nana drinks menu preview"></picture>
             <div class="meta">
               <strong>Drinks <span lang="zh">酒单</span></strong>
               <span class="open">Open PDF</span>
@@ -453,18 +509,18 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
             </div>
           </div>
           <div class="pager" data-pager="food" aria-label="Food menu pages" tabindex="0">
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p1.jpg" alt="nana 研酒所 food menu page 1 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p2.jpg" alt="nana 研酒所 food menu page 2 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p3.jpg" alt="nana 研酒所 food menu page 3 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p4.jpg" alt="nana 研酒所 food menu page 4 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p5.jpg" alt="nana 研酒所 food menu page 5 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p6.jpg" alt="nana 研酒所 food menu page 6 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p7.jpg" alt="nana 研酒所 food menu page 7 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p8.jpg" alt="nana 研酒所 food menu page 8 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p9.jpg" alt="nana 研酒所 food menu page 9 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p10.jpg" alt="nana 研酒所 food menu page 10 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p11.jpg" alt="nana 研酒所 food menu page 11 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><img src="assets/menu/food-p12.jpg" alt="nana 研酒所 food menu page 12 of 12" width="1414" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p1-480.webp 480w, assets/img/food-p1-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p1-960.jpg" srcset="assets/img/food-p1-480.jpg 480w, assets/img/food-p1-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 1 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p2-480.webp 480w, assets/img/food-p2-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p2-960.jpg" srcset="assets/img/food-p2-480.jpg 480w, assets/img/food-p2-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 2 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p3-480.webp 480w, assets/img/food-p3-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p3-960.jpg" srcset="assets/img/food-p3-480.jpg 480w, assets/img/food-p3-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 3 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p4-480.webp 480w, assets/img/food-p4-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p4-960.jpg" srcset="assets/img/food-p4-480.jpg 480w, assets/img/food-p4-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 4 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p5-480.webp 480w, assets/img/food-p5-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p5-960.jpg" srcset="assets/img/food-p5-480.jpg 480w, assets/img/food-p5-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 5 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p6-480.webp 480w, assets/img/food-p6-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p6-960.jpg" srcset="assets/img/food-p6-480.jpg 480w, assets/img/food-p6-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 6 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p7-480.webp 480w, assets/img/food-p7-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p7-960.jpg" srcset="assets/img/food-p7-480.jpg 480w, assets/img/food-p7-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 7 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p8-480.webp 480w, assets/img/food-p8-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p8-960.jpg" srcset="assets/img/food-p8-480.jpg 480w, assets/img/food-p8-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 8 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p9-480.webp 480w, assets/img/food-p9-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p9-960.jpg" srcset="assets/img/food-p9-480.jpg 480w, assets/img/food-p9-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 9 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p10-480.webp 480w, assets/img/food-p10-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p10-960.jpg" srcset="assets/img/food-p10-480.jpg 480w, assets/img/food-p10-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 10 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p11-480.webp 480w, assets/img/food-p11-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p11-960.jpg" srcset="assets/img/food-p11-480.jpg 480w, assets/img/food-p11-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 11 of 12"></picture></a>
+            <a class="page" href="assets/menu/food.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/food-p12-480.webp 480w, assets/img/food-p12-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/food-p12-960.jpg" srcset="assets/img/food-p12-480.jpg 480w, assets/img/food-p12-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1414" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 food menu page 12 of 12"></picture></a>
           </div>
         </div>
         <div class="pager-wrap">
@@ -477,10 +533,10 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
             </div>
           </div>
           <div class="pager" data-pager="drinks" aria-label="Drinks menu pages" tabindex="0">
-            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p1.jpg" alt="nana 研酒所 drinks menu page 1 of 4" width="1415" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p2.jpg" alt="nana 研酒所 drinks menu page 2 of 4" width="1415" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p3.jpg" alt="nana 研酒所 drinks menu page 3 of 4" width="1415" height="2000" loading="lazy" decoding="async"></a>
-            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><img src="assets/menu/drinks-p4.jpg" alt="nana 研酒所 drinks menu page 4 of 4" width="1415" height="2000" loading="lazy" decoding="async"></a>
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/drinks-p1-480.webp 480w, assets/img/drinks-p1-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/drinks-p1-960.jpg" srcset="assets/img/drinks-p1-480.jpg 480w, assets/img/drinks-p1-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1415" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 drinks menu page 1 of 4"></picture></a>
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/drinks-p2-480.webp 480w, assets/img/drinks-p2-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/drinks-p2-960.jpg" srcset="assets/img/drinks-p2-480.jpg 480w, assets/img/drinks-p2-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1415" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 drinks menu page 2 of 4"></picture></a>
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/drinks-p3-480.webp 480w, assets/img/drinks-p3-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/drinks-p3-960.jpg" srcset="assets/img/drinks-p3-480.jpg 480w, assets/img/drinks-p3-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1415" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 drinks menu page 3 of 4"></picture></a>
+            <a class="page" href="assets/menu/drinks.pdf" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/drinks-p4-480.webp 480w, assets/img/drinks-p4-960.webp 960w" sizes="(min-width:760px) 380px, 88vw"><img src="assets/img/drinks-p4-960.jpg" srcset="assets/img/drinks-p4-480.jpg 480w, assets/img/drinks-p4-960.jpg 960w" sizes="(min-width:760px) 380px, 88vw" width="1415" height="2000" loading="lazy" decoding="async" alt="nana 研酒所 drinks menu page 4 of 4"></picture></a>
           </div>
         </div>
         <p class="menu-note">Swipe (or use the arrows / scroll wheel on desktop) to browse every page; tap any page to open the full PDF.</p>
@@ -806,6 +862,11 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
       }, { passive: false });
       update();
     });
+  </script>
+  <script>
+  (function(){if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  document.documentElement.classList.add("js");var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}})},{rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll("main .block, .ribbon, .pulse, .policy-band").forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight){return;}el.classList.add("rv");io.observe(el);});})();
   </script>
 </body>
 </html>
