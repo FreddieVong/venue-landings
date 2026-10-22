@@ -157,7 +157,7 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-si
 }
 @media(max-width:380px){.rule li{grid-template-columns:1fr;gap:4px}.ribbon,.pulse{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-.wm{display:inline-block;width:auto;vertical-align:middle}.nav-brand{display:inline-flex;align-items:center;gap:.4em}.sr{font-weight:700}.brandrow{display:inline-flex;align-items:center;gap:.5em}.brandrow .wm{height:3.2em}</style>
+.nav-brand .lock,.nav-brand .lock span,.h1-brand .lock{opacity:1}.h1-brand:has(.lock){opacity:1}.lock{display:inline-flex;align-items:flex-start;gap:.35em;line-height:1;color:#14453d}.lock .lt{font-weight:500;letter-spacing:-.01em}.lock .wm{display:block;height:2.1em;width:auto;margin:-.08em 0 -1.1em}.nav-brand{font-size:1.15rem;padding-bottom:.6em}.lock-lg{font-size:1.6rem;margin:0 0 .9em}.h1-brand .lock-lg{display:inline-flex}</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -370,7 +370,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <div class="wrap">
     <div class="top">
     <nav class="nav" aria-label="Brand">
-      <a class="nav-brand" href="./" style="text-decoration:none"><span class="sr">nana</span><img class="wm" src="assets/wordmark-yanjiusuo.png" width="1186" height="732" alt="nana 研酒所" style="height:2.4em"></a>
+      <a class="nav-brand" href="./" style="text-decoration:none"><span class="lock"><span class="lt" aria-hidden="true">nana</span><img class="wm" src="assets/wordmark-yanjiusuo.png" width="1186" height="732" alt="nana 研酒所"></span></a>
       <div class="nav-chip">SS13 · Live 9pm</div>
     </nav>
 
@@ -379,7 +379,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
         <img src="assets/logo.png" width="1206" height="1173" fetchpriority="high" decoding="async" alt="nana 研酒所 logo — teal banana mark with stacked nana wordmark">
       </div>
       <p class="kicker">Japanese social live bar · Subang Jaya</p>
-      <h1><span class="h1-brand"><span class="brandrow"><span>nana</span><img class="wm" src="assets/wordmark-yanjiusuo.png" width="1186" height="732" alt="nana 研酒所"><span>· SS13 Subang Jaya</span></span></span>Date nights. Friends. <span class="soft">Live from 9.</span></h1>
+      <h1><span class="h1-brand"><span class="lock lock-lg"><span class="lt" aria-hidden="true">nana</span><img class="wm" src="assets/wordmark-yanjiusuo.png" width="1186" height="732" alt="nana 研酒所"></span></span>Date nights. Friends. <span class="soft">Live from 9.</span></h1>
       <p class="zh-line" lang="zh">梳邦 SS13 现场音乐酒吧 · 约会、朋友小聚，9 点开唱。</p>
 
       <div class="cta-stack">
