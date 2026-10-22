@@ -186,7 +186,7 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-si
 }
 @media(max-width:380px){.rule li{grid-template-columns:1fr;gap:4px}.ribbon,.pulse{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-.final{margin-top:48px;padding:28px 0 0;border-top:1px solid var(--line)}.final h2{font-size:clamp(1.6rem,6vw,2.1rem);font-weight:700;letter-spacing:-.03em;margin-bottom:14px}.final .btn{width:100%;max-width:26rem}.v .lk{color:var(--accent-text);font-weight:600;text-underline-offset:3px}</style>
+.final{margin-top:48px;padding:28px 0 0;border-top:1px solid var(--line)}.final h2{font-size:clamp(1.6rem,6vw,2.1rem);font-weight:700;letter-spacing:-.03em;margin-bottom:14px}.final .btn{width:100%;max-width:26rem}.v .lk{color:var(--accent-text);font-weight:600;text-underline-offset:3px}.reel-wrap{margin:24px auto 0;max-width:24rem}.reel{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:#111;aspect-ratio:4/5}.reel video{display:block;width:100%;height:100%;object-fit:cover}.reel-cap{margin-top:8px;font-size:12.5px;font-weight:600;color:var(--accent-text);text-align:center}</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -334,6 +334,14 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-si
       </div>
     </header>
     </div>
+
+    <figure class="reel-wrap">
+      <div class="reel"><video autoplay muted loop playsinline preload="metadata" poster="assets/video/xianyu-live-poster.jpg" width="640" height="800" aria-label="A live night at Xianyu 咸鱼酒馆, Taman Desa">
+        <source src="assets/video/xianyu-live.webm" type="video/webm">
+        <source src="assets/video/xianyu-live.mp4" type="video/mp4">
+      </video></div>
+      <figcaption class="reel-cap">A night at 咸鱼 · live from 9:30pm</figcaption>
+    </figure>
 
     <main id="main">
 
