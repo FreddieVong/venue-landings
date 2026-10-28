@@ -186,7 +186,14 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-si
 }
 @media(max-width:380px){.rule li{grid-template-columns:1fr;gap:4px}.ribbon,.pulse{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-.nav-brand .lock,.nav-brand .lock span,.h1-brand .lock{opacity:1}.h1-brand:has(.lock){opacity:1}.lock{display:inline-flex;align-items:flex-start;gap:.35em;line-height:1;color:#14453d}.lock .lt{font-weight:500;letter-spacing:-.01em}.lock .wm{display:block;height:2.1em;width:auto;margin:-.08em 0 -1.1em}.nav-brand{font-size:1.15rem;padding-bottom:.6em}.lock-lg{font-size:1.6rem;margin:0 0 .9em}.h1-brand .lock-lg{display:inline-flex}.reel{margin:24px 0 0;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:#111;aspect-ratio:16/9}.reel video{display:block;width:100%;height:100%;object-fit:cover}.reel-cap{margin-top:8px;font-size:12.5px;font-weight:600;color:var(--accent-text)}.final{margin-top:48px;padding:28px 0 0;border-top:1px solid var(--line)}.final h2{font-size:clamp(1.6rem,6vw,2.1rem);font-weight:700;letter-spacing:-.03em;margin-bottom:14px}.final .btn{width:100%;max-width:26rem}.v .lk{color:var(--accent-text);font-weight:600;text-underline-offset:3px}.tabs{display:inline-flex;margin-top:16px;border:1px solid var(--line-strong);border-radius:var(--r-sm);overflow:hidden}.tab{appearance:none;border:0;background:var(--paper);color:var(--ink-2);font:inherit;font-weight:600;font-size:14.5px;min-height:44px;padding:0 20px;cursor:pointer}.tab+.tab{border-left:1px solid var(--line-strong)}.tab[aria-selected="true"]{background:var(--btn);color:var(--on-btn)}.pager-wrap[hidden]{display:none}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+.nav-brand .lock,.nav-brand .lock span,.h1-brand .lock{opacity:1}.h1-brand:has(.lock){opacity:1}.lock{display:inline-flex;align-items:flex-start;gap:.35em;line-height:1;color:#14453d}.lock .lt{font-weight:500;letter-spacing:-.01em}.lock .wm{display:block;height:2.1em;width:auto;margin:-.08em 0 -1.1em}.nav-brand{font-size:1.15rem;padding-bottom:.6em}.lock-lg{font-size:1.6rem;margin:0 0 .9em}.h1-brand .lock-lg{display:inline-flex}.reel{margin:24px 0 0;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:#111;aspect-ratio:16/9}.reel video{display:block;width:100%;height:100%;object-fit:cover}.reel-cap{margin-top:8px;font-size:12.5px;font-weight:600;color:var(--accent-text)}.final{margin-top:48px;padding:28px 0 0;border-top:1px solid var(--line)}.final h2{font-size:clamp(1.6rem,6vw,2.1rem);font-weight:700;letter-spacing:-.03em;margin-bottom:14px}.final .btn{width:100%;max-width:26rem}.v .lk{color:var(--accent-text);font-weight:600;text-underline-offset:3px}.tabs{display:inline-flex;margin-top:16px;border:1px solid var(--line-strong);border-radius:var(--r-sm);overflow:hidden}.tab{appearance:none;border:0;background:var(--paper);color:var(--ink-2);font:inherit;font-weight:600;font-size:14.5px;min-height:44px;padding:0 20px;cursor:pointer}.tab+.tab{border-left:1px solid var(--line-strong)}.tab[aria-selected="true"]{background:var(--btn);color:var(--on-btn)}.pager-wrap[hidden]{display:none}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:759px){.logo-orb,.logo-stage{width:64px;margin-bottom:14px}}
+.proof-line{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;font-weight:600;margin:0 0 18px;padding:0;list-style:none}
+.proof-line li{display:flex;align-items:center;gap:6px}
+.proof-line a{color:inherit}
+.hero .hint{font-size:13px;opacity:.75;margin-top:8px}
+.week-stale .days{display:none}
+</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -408,11 +415,13 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
         <picture><source type="image/webp" srcset="assets/img/logo-300.webp 300w, assets/img/logo-600.webp 600w" sizes="(min-width:760px) 300px, 132px"><img src="assets/img/logo-600.jpg" srcset="assets/img/logo-300.jpg 300w, assets/img/logo-600.jpg 600w" sizes="(min-width:760px) 300px, 132px" width="1190" height="1173" fetchpriority="high" decoding="async" alt="nana 研酒所 logo — teal banana mark with stacked nana wordmark"></picture>
       </div>
       <p class="kicker">Japanese social live bar · Subang Jaya</p>
-      <h1><span class="h1-brand"><span class="lock lock-lg"><span class="lt" aria-hidden="true">nana</span><img class="wm" src="assets/img/wordmark-480.png" srcset="assets/img/wordmark-240.png 240w, assets/img/wordmark-480.png 480w" sizes="120px" width="1186" height="732" decoding="async" alt="nana 研酒所"></span></span>Date nights. Friends. <span class="soft">Live from 9.</span></h1>
-      <p class="zh-line" lang="zh">梳邦 SS13 现场音乐酒吧 · 约会、朋友小聚，9 点开唱。</p>
+      <h1><span class="h1-brand"><span class="lock lock-lg"><span class="lt" aria-hidden="true">nana</span><img class="wm" src="assets/img/wordmark-480.png" srcset="assets/img/wordmark-240.png 240w, assets/img/wordmark-480.png 480w" sizes="120px" width="1186" height="732" decoding="async" alt="nana 研酒所"></span></span>Your date night, sorted. <span class="soft">Live band every night.</span></h1>
+      <p class="zh-line">Live band 9pm–12:15am nightly · Japanese fusion bites · open 5pm–2am<br><span lang="zh">梳邦 SS13 · 约会、朋友小聚，每晚 9 点开唱。</span></p>
+      <ul class="proof-line"><li>★ 4.7 · 221 Google reviews</li><li><a href="https://waze.com/ul?q=nana%20SS13" target="_blank" rel="noopener">📍 SS13 Subang Jaya · Waze</a></li></ul>
 
       <div class="cta-stack">
-        <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
+        <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">Book my table on WhatsApp / 订位</a>
+        <p class="hint">No deposit · table held 15 min · walk-ins welcome too</p>
       </div>
     </header>
     </div>
@@ -678,7 +687,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 
       <section class="final" id="book" aria-labelledby="book-h">
         <h2 id="book-h">Book your table <span lang="zh" style="font-weight:500;color:var(--ink-3);font-size:.6em">订位</span></h2>
-        <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
+        <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">Book my table on WhatsApp / 订位</a>
         <p class="hint">Include date, time &amp; pax. Confirmations come in English; chat in English or <span lang="zh">中文</span>.</p>
       </section>
     </main>
@@ -686,7 +695,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     <footer>nana 研酒所 · SS13, Subang Jaya</footer>
   </div>
   <div class="sticky">
-    <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
+    <a class="btn btn-primary" href="https://wa.me/60128974221?text=Hi%20nana%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">Book my table on WhatsApp / 订位</a>
   </div>
   <script>
     document.querySelectorAll("[data-pager]").forEach(function (pager) {
@@ -756,5 +765,6 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <script>
   (function(){var d=new Date(Date.now()+8*36e5).toISOString().slice(0,10),el=document.querySelector('.day[data-date="'+d+'"]');if(!el)return;el.classList.add("today");var c=document.getElementById("days");c.scrollLeft=el.offsetLeft-c.offsetLeft;})();
   </script>
+<script>(function(){var d=document.querySelectorAll('#days .day[data-date]');if(!d.length)return;var last=d[d.length-1].getAttribute('data-date');var t=new Date(Date.now()+8*3600e3).toISOString().slice(0,10);if(last<t){var s=document.getElementById('week');s.classList.add('week-stale');var h=document.getElementById('week-h');h.innerHTML='Live band every night<em>每晚现场乐队</em>';var n=s.querySelector('.week-note')||document.createElement('p');n.className='week-note';n.innerHTML='Tonight\u2019s singer is posted daily on <a href="https://instagram.com/nana.ss13" target="_blank" rel="noopener">@nana.ss13</a>.';if(!n.parentNode)h.after(n);}else{d.forEach(function(x){if(x.getAttribute('data-date')===t){x.querySelector('b').textContent='Tonight \u00b7 '+x.querySelector('b').textContent;}});}})();</script>
 </body>
 </html>

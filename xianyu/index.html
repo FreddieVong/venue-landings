@@ -186,7 +186,14 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-si
 }
 @media(max-width:380px){.rule li{grid-template-columns:1fr;gap:4px}.ribbon,.pulse{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-.final{margin-top:48px;padding:28px 0 0;border-top:1px solid var(--line)}.final h2{font-size:clamp(1.6rem,6vw,2.1rem);font-weight:700;letter-spacing:-.03em;margin-bottom:14px}.final .btn{width:100%;max-width:26rem}.v .lk{color:var(--accent-text);font-weight:600;text-underline-offset:3px}.reel-wrap{margin:24px auto 0;max-width:24rem}.reel{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:#111;aspect-ratio:4/5}.reel video{display:block;width:100%;height:100%;object-fit:cover}.reel-cap{margin-top:8px;font-size:12.5px;font-weight:600;color:var(--accent-text);text-align:center}.tabs{display:inline-flex;margin-top:16px;border:1px solid var(--line-strong);border-radius:var(--r-sm);overflow:hidden}.tab{appearance:none;border:0;background:var(--paper);color:var(--ink-2);font:inherit;font-weight:600;font-size:14.5px;min-height:44px;padding:0 20px;cursor:pointer}.tab+.tab{border-left:1px solid var(--line-strong)}.tab[aria-selected="true"]{background:var(--btn);color:var(--on-btn)}.pager-wrap[hidden]{display:none}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+.final{margin-top:48px;padding:28px 0 0;border-top:1px solid var(--line)}.final h2{font-size:clamp(1.6rem,6vw,2.1rem);font-weight:700;letter-spacing:-.03em;margin-bottom:14px}.final .btn{width:100%;max-width:26rem}.v .lk{color:var(--accent-text);font-weight:600;text-underline-offset:3px}.reel-wrap{margin:24px auto 0;max-width:24rem}.reel{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:#111;aspect-ratio:4/5}.reel video{display:block;width:100%;height:100%;object-fit:cover}.reel-cap{margin-top:8px;font-size:12.5px;font-weight:600;color:var(--accent-text);text-align:center}.tabs{display:inline-flex;margin-top:16px;border:1px solid var(--line-strong);border-radius:var(--r-sm);overflow:hidden}.tab{appearance:none;border:0;background:var(--paper);color:var(--ink-2);font:inherit;font-weight:600;font-size:14.5px;min-height:44px;padding:0 20px;cursor:pointer}.tab+.tab{border-left:1px solid var(--line-strong)}.tab[aria-selected="true"]{background:var(--btn);color:var(--on-btn)}.pager-wrap[hidden]{display:none}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:759px){.logo-orb,.logo-stage{width:64px;margin-bottom:14px}}
+.proof-line{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;font-weight:600;margin:0 0 18px;padding:0;list-style:none}
+.proof-line li{display:flex;align-items:center;gap:6px}
+.proof-line a{color:inherit}
+.hero .hint{font-size:13px;opacity:.75;margin-top:8px}
+.week-stale .days{display:none}
+</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -320,11 +327,8 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
 gtag('js',new Date());gtag('config','G-GZSRML6N9E');
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';if(h.indexOf('wa.me')>-1||h.indexOf('api.whatsapp.com')>-1){try{gtag('event','whatsapp_click',{link_url:h,transport_type:'beacon'});}catch(x){}}else if(h.indexOf('maps.app.goo.gl')>-1||h.indexOf('google.com/maps')>-1||h.indexOf('waze.com')>-1){try{gtag('event','directions_click',{link_url:h,transport_type:'beacon'});}catch(x){}}},true);
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18417939887"></script>
 <script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','AW-18417939887');
+gtag('config','AW-18417939887');
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';if(h.indexOf('wa.me')>-1||h.indexOf('api.whatsapp.com')>-1){try{gtag('event','conversion',{send_to:'AW-18417939887/WlDNCIPR-6odEK_rrc5E',transport_type:'beacon'});}catch(x){}}},true);
 </script>
 </head>
@@ -340,11 +344,13 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
       <div class="logo-stage">
         <picture><source type="image/webp" srcset="assets/img/logo-300.webp 300w, assets/img/logo-600.webp 600w" sizes="(min-width:760px) 300px, 132px"><img src="assets/img/logo-600.png" srcset="assets/img/logo-300.png 300w, assets/img/logo-600.png 600w" sizes="(min-width:760px) 300px, 132px" width="1563" height="1563" fetchpriority="high" decoding="async" alt="Xianyu 咸鱼酒馆 logo — 咸鱼 calligraphy with orange xián yu fish mark"></picture>
       </div>
-      <h1><span class="h1-brand">Xianyu <span lang="zh">咸鱼酒馆</span> · Taman Desa KL</span>Live from 9:30. Drinks till 2:30.</h1>
-      <p class="zh-line" lang="zh">9 点半开唱，和朋友喝到凌晨两点半。</p>
+      <h1><span class="h1-brand">Xianyu <span lang="zh">咸鱼酒馆</span> · Taman Desa KL</span>Your table for tonight’s live band.</h1>
+      <p class="zh-line">Live band every night 9:30pm–12:45am · open 6:30pm–2:30am<br><span lang="zh">每晚 9:30 开唱，和朋友喝到凌晨两点半。</span></p>
+      <ul class="proof-line"><li>★ 4.8 · 368 Google reviews</li><li><a href="https://waze.com/ul?q=Xian%20Yu%20KL" target="_blank" rel="noopener">📍 Union Tower, Taman Desa · Waze</a></li></ul>
 
       <div class="cta-stack">
-        <a class="btn btn-primary" href="https://wa.me/60126522885?text=Hi%20Xianyu%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
+        <a class="btn btn-primary" href="https://wa.me/60126522885?text=Hi%20Xianyu%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">Book my table on WhatsApp / 订位</a>
+        <p class="hint">No deposit · table held 15 min · walk-ins welcome too</p>
       </div>
     </header>
     </div>
@@ -442,7 +448,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 
       <section class="final" id="book" aria-labelledby="book-h">
         <h2 id="book-h">Book your table <span lang="zh" style="font-weight:500;color:var(--ink-3);font-size:.6em">订位</span></h2>
-        <a class="btn btn-primary" href="https://wa.me/60126522885?text=Hi%20Xianyu%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
+        <a class="btn btn-primary" href="https://wa.me/60126522885?text=Hi%20Xianyu%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">Book my table on WhatsApp / 订位</a>
         <p class="hint">Include date, time &amp; pax. Confirmations come in English; chat in English or <span lang="zh">中文</span>.</p>
       </section>
     </main>
@@ -450,7 +456,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     <footer>Xianyu 咸鱼酒馆 · Taman Desa, Kuala Lumpur</footer>
   </div>
   <div class="sticky">
-    <a class="btn btn-primary" href="https://wa.me/60126522885?text=Hi%20Xianyu%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">WhatsApp to book / WhatsApp 订位</a>
+    <a class="btn btn-primary" href="https://wa.me/60126522885?text=Hi%20Xianyu%2C%20I%27d%20like%20to%20book.%20Date%3A%20%20Time%3A%20%20Pax%3A" target="_blank" rel="noopener">Book my table on WhatsApp / 订位</a>
   </div>
   <script>
     document.querySelectorAll("[data-pager]").forEach(function (pager) {
@@ -520,5 +526,6 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <script>
   (function(){var tabs=document.querySelectorAll('.tab');tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});var p=document.querySelector('#'+t.getAttribute('aria-controls')+' .pager');if(p){p.scrollLeft=0;p.dispatchEvent(new Event('scroll'));}});});})();
   </script>
+<script>(function(){var d=document.querySelectorAll('#days .day[data-date]');if(!d.length)return;var last=d[d.length-1].getAttribute('data-date');var t=new Date(Date.now()+8*3600e3).toISOString().slice(0,10);if(last<t){var s=document.getElementById('week');s.classList.add('week-stale');var h=document.getElementById('week-h');h.innerHTML='Live band every night<em>每晚现场乐队</em>';var n=s.querySelector('.week-note')||document.createElement('p');n.className='week-note';n.innerHTML='Tonight\u2019s singer is posted daily on <a href="https://instagram.com/xianyu.kl" target="_blank" rel="noopener">@xianyu.kl</a>.';if(!n.parentNode)h.after(n);}else{d.forEach(function(x){if(x.getAttribute('data-date')===t){x.querySelector('b').textContent='Tonight \u00b7 '+x.querySelector('b').textContent;}});}})();</script>
 </body>
 </html>
