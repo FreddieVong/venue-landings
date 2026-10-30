@@ -18,13 +18,13 @@
 - Age policy: under-18 guests must leave by 8:30pm; strictly 18+ after 8:30pm
 - Minimum spend: stage sofa RM300, on Fri/Sat/public-holiday-eve nights only; no sofa minimum on weekdays or the public-holiday day itself
 - Navigation: search "nana SS13" on Waze or Grab
-- This week's live band line-up (new poster every Monday; band nightly from 9pm): https://nana.pingan.today/lineup
+- This week's live band line-up (new posters every Monday; band nightly from 9pm): https://gonana.my/#week
 - Instagram: https://instagram.com/nana.ss13
 - Google Maps: https://maps.app.goo.gl/CddBMPbaehJuaard7
-- Page: https://freddievong.github.io/venue-landings/nana/
-- [Full menu in text, with prices](https://freddievong.github.io/venue-landings/nana/#menu-text)
-- [Food menu (PDF)](https://freddievong.github.io/venue-landings/nana/assets/menu/food.pdf)
-- [Drinks menu (PDF)](https://freddievong.github.io/venue-landings/nana/assets/menu/drinks.pdf)
+- Page: https://gonana.my/
+- [Full menu in text, with prices](https://gonana.my/#menu-text)
+- [Food menu (PDF)](https://gonana.my/assets/menu/food.pdf)
+- [Drinks menu (PDF)](https://gonana.my/assets/menu/drinks.pdf)
 
 ## Xianyu 咸鱼酒馆 — Taman Desa, Kuala Lumpur
 
