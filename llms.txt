@@ -37,9 +37,9 @@
 - Navigation: search "Xian Yu KL" on Waze or Grab
 - Instagram: https://instagram.com/xianyu.kl
 - Google Maps: https://maps.app.goo.gl/R8NTbLVmtterrdzh8
-- Page: https://freddievong.github.io/venue-landings/xianyu/
-- [Food menu (PDF)](https://freddievong.github.io/venue-landings/xianyu/assets/menu/food.pdf)
-- [Drinks menu (PDF)](https://freddievong.github.io/venue-landings/xianyu/assets/menu/drinks.pdf)
+- Page: https://xianyukl.com/
+- [Food menu (PDF)](https://xianyukl.com/assets/menu/food.pdf)
+- [Drinks menu (PDF)](https://xianyukl.com/assets/menu/drinks.pdf)
 
 ## Notes
 
